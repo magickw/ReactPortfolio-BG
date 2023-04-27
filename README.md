@@ -1,4 +1,4 @@
-# React Portfolio, multiple pages with dark mode
+# React Portfolio, multiple pages with dark/light mode toggler
 
 
 ## features
@@ -22,4 +22,4 @@
 
 ## credits
 
-This portofio website was created based on the template created by [Payton Pierce](https://paytonpierce.dev)
+This portofio website was adapted based on the template created by [Payton Pierce](https://paytonpierce.dev)
