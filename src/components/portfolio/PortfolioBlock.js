@@ -5,7 +5,13 @@ import {Box} from "@mui/material";
 function PortfolioBlock(props) {
    const {image, live, source, title} = props;
    return (
-      <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+      <Box 
+         display={'flex'}
+         flexDirection={'column'}
+         justifyContent={'center'}
+         alignItems={'center'}
+         p={6}
+      >
          <Box component={'img'} src={image} alt={'mockup'}/>
          <h1 style={{fontSize: '2rem'}}>{title}</h1>
          <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}

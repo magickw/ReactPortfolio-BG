@@ -27,11 +27,13 @@ export const info = {
         },
         {
             emoji: "💼",
-            text: "Looking for a full-stack development position"
+            text: "looking for a full-stack development position"
         },
         {
             emoji: "📧",
-            text: "peterguo1983@gmail.com"
+            text: (
+                <a href="mailto:peterguo1983@gmail.com">email me</a>
+              )
         }
     ],
     socials: [
