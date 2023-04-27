@@ -60,6 +60,9 @@ export default function Navbar({darkMode, handleClick}) {
                     // </Box>
                 ))}
                 <li>
+                    <a href="https://flowcv.com/resume/6mnf9c4to0">résumé</a>
+                </li>
+                <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>
             </Box>
