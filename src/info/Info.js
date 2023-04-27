@@ -23,7 +23,7 @@ export const info = {
         },
         {
             emoji: '🌎',
-            text: 'based in the San Francisco Bay Area'
+            text: 'based in San Francisco Bay Area'
         },
         {
             emoji: "💼",

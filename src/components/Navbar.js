@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import logo from '../assets/logo.png';
 import Style from './Navbar.module.scss';
 import Toggler from "./home/Toggler";
 import {Link, useLocation} from "react-router-dom";
@@ -16,12 +17,17 @@ const links = [
         to: '/about',
         active: 'about'
     },
+    // {
+    //     name: info.initials,
+    //     type: 'initials',
+    //     to: '/',
+    //     active: 'home'
+    // },
     {
-        name: info.initials,
-        type: 'initials',
+        image: logo,
         to: '/',
         active: 'home'
-    },
+     },
     {
         name: 'Portfolio',
         to: '/portfolio',
@@ -39,13 +45,19 @@ export default function Navbar({darkMode, handleClick}) {
                  gap={{xs: '2rem', md: '8rem'}}
                  textTransform={'lowercase'} fontSize={'1rem'}>
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                         sx={{borderImageSource: info.gradient}}>
-                        <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
-                            {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
-                            {link.type && <h1>{link.name}</h1>}
-                        </Link>
-                    </Box>
+                    <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>
+                    <Link aria-label={'home page'} to={link.to} onClick={() => setActive(link.active)}>
+                       {link.name && <p style={{paddingBottom: '0.5rem'}}>{link.name}</p>}
+                       {link.image && <img alt={''} src={link.image} style={{maxWidth: '75px'}}/>}
+                    </Link>
+                 </li>
+                    // <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
+                    //      sx={{borderImageSource: info.gradient}}>
+                    //     <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
+                    //         {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
+                    //         {link.type && <h1>{link.name}</h1>}
+                    //     </Link>
+                    // </Box>
                 ))}
                 <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
