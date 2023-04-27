@@ -2,6 +2,8 @@
 
 nav {
   transition: $transition;
+  margin: 20px; /* add 10 pixels of margin on all sides */
+  border: 2px 
 }
 
 .active {
