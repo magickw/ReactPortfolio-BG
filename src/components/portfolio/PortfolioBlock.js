@@ -10,7 +10,7 @@ function PortfolioBlock(props) {
          flexDirection={'column'}
          justifyContent={'center'}
          alignItems={'center'}
-         p={6}
+         p={10}
       >
          <Box component={'img'} src={image} alt={'mockup'}/>
          <h1 style={{fontSize: '2rem'}}>{title}</h1>

@@ -12,15 +12,10 @@ export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 export const info = {
     firstName: "Baofeng",
     lastName: "Guo",
-    initials: "baofeng.dev", 
     selfPortrait: self, 
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, 
     baseColor: colors[0],
     miniBio: [ 
-        {
-            emoji: '☕',
-            text: 'fueled by coffee'
-        },
         {
             emoji: '🌎',
             text: 'based in San Francisco Bay Area'

@@ -10,6 +10,7 @@ function Type() {
           "I'm a Full Stack Developer",
           "I'm a MERN Stack Developer",
           "I'm an Open Source Contributor",
+          "I'm a Chinese medical translator",
         ],
         autoStart: true,
         loop: true,
