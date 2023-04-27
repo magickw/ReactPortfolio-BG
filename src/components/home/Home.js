@@ -19,7 +19,7 @@ export default function Home() {
          <Box>
             <h1>Hi, my name is <span style={{background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{info.firstName}</span><span className={Style.hand}>🤚</span>
             </h1>
-            <h2 style={{ padding: 45, textAlign: "left" }}>
+            <h2 style={{ padding: 45, textAlign: "left" }}> */}
                <Type />
             </h2>
 
