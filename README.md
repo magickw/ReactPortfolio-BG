@@ -1,5 +1,6 @@
 # React Portfolio, multiple pages with dark/light mode toggler
 
+![image](./src/assets/logo.png)
 
 ## features
 
