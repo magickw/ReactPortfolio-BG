@@ -45,13 +45,6 @@ export default function Navbar({darkMode, handleClick}) {
                        {link.image && <img alt={''} src={link.image} style={{maxWidth: '75px'}}/>}
                     </Link>
                  </li>
-                    // <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                    //      sx={{borderImageSource: info.gradient}}>
-                    //     <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
-                    //         {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
-                    //         {link.type && <h1>{link.name}</h1>}
-                    //     </Link>
-                    // </Box>
                 ))}
                 <li>
                     <a href="https://flowcv.com/resume/6mnf9c4to0" target="_blank" rel="noreferrer">résumé</a>
