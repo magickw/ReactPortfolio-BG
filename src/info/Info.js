@@ -57,7 +57,7 @@ export const info = {
     bio: "Hello! I'm Baofeng Guo from San Francisco Bay Area. I hold a BS degree in Biology and have been working as an English - Chinese medical translator for more than 14 years. 4 years after moving to the Bay Area and inspired by its entrepreneurial atmosphere, I felt it's about time to make a change by pursuing a coding career. I attended 2022 UC Berkeley Extension Coding Bootcamp for Full Stack Web Development. Do not hesitate to contact me if you need my services. Looking forward to working with ingenious teams on challenging projects.",
     skills:
         {
-            proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'tailwindcss', 'mangodb', 'mySQL', 'vs code'],
+            proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'tailwindcss', 'mangodb', 'mySQL', 'vs code', 'Apollo GraphQL', 'Relational Databases', 'Webpack', 'PWA', 'Unit Testing w/ JEST', 'Express.js', 'jQuery', 'API'],
             exposedTo: ['nodejs', 'python', 'react native']
         }
     ,
