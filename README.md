@@ -4,8 +4,9 @@
 
 ## demo
 
-<video src="src/assets/demo.mov" controls="controls" style="max-width: 730px;">
-</video>
+
+![Screenshot](https://user-images.githubusercontent.com/78279120/235318953-3a26054d-5a7a-4a3c-af70-44728f91f34f.mov)
+
 
 ## how to use
 
