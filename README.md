@@ -5,7 +5,10 @@
 ## demo
 
 
-![Screenshot](https://user-images.githubusercontent.com/78279120/235318953-3a26054d-5a7a-4a3c-af70-44728f91f34f.mov)
+
+https://user-images.githubusercontent.com/78279120/235319341-386dae82-a608-4553-a595-99b1fc49d0fa.mov
+
+
 
 
 ## how to use
