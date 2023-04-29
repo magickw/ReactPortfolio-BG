@@ -17,10 +17,10 @@ function PortfolioBlock(props) {
          <h1 style={{fontSize: '1rem'}}>{description}</h1>
          <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
               alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
-            <Box p={1} border={'2px solid black'} borderRadius={'15px'}>
+            <Box p={1} border={'2px solid green'} borderRadius={'15px'}>
                <IconLink link={live} title={'View Site'} icon={'fa fa-link'}/>
             </Box>
-            <Box p={1} border={'2px solid black'} borderRadius={'15px'}>
+            <Box p={1} border={'2px solid green'} borderRadius={'15px'}>
                <IconLink link={source} title={'View Code'} icon={'fa fa-github'}/>
             </Box>
          </Box>
