@@ -14,6 +14,9 @@ import Particle from "./Particle";
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
+   const today = new Date();
+   const currentYear = today.getFullYear();
+
    function handleToggleDarkMode() {
       let oppositeOfCurrentDarkMode = !darkMode
       console.log(oppositeOfCurrentDarkMode)
@@ -50,7 +53,7 @@ export default function BaseLayout() {
                <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                     py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
                   <p>Thank you for visiting. The porfolio template was created with &hearts; by <a href={'https://paytonpierce.dev'}>Payton Pierce</a></p>
-                  <p>&copy; 2023</p>
+                  <p>&copy; {currentYear}</p>
                </Box>
             </Grid>
          </Grid>
