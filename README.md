@@ -2,17 +2,10 @@
 
 ![image](./src/assets/logo.png)
 
-## features
+## demo
 
-🌑 Dark Mode Toggler
-
-📖 Multiple Pages (React Router)
-
-📱 Fully Responsive
-
-🎨 Modern Design
-
-💡 Perfect Lighthouse Score
+<video src="src/assets/demo.mov" controls="controls" style="max-width: 730px;">
+</video>
 
 ## how to use
 
