@@ -7,6 +7,10 @@ import Portfolio from "./portfolio/Portfolio";
 import {Route, Routes} from "react-router-dom";
 import {Box, Grid} from "@mui/material";
 
+
+import Particle from "./Particle";
+
+
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
@@ -29,6 +33,7 @@ export default function BaseLayout() {
 
    return (
       <Box className={darkMode ? Style.dark : Style.light}>
+         <Particle />
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
                justifyContent={'space-between'}>
             <Grid item>
