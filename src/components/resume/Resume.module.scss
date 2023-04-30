@@ -4,7 +4,7 @@
 .resume-button {
     border-color: green;
     color: white;
-    background-color: green;
+    background-color: purple;
     padding: 8px 16px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -13,8 +13,8 @@
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: white;
-      color: green;
+      background-color: purple;
+      color: white;
       text-decoration: none;
     }
   }
