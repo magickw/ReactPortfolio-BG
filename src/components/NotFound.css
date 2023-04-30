@@ -13,3 +13,17 @@
     margin-top: 20px;
   }
   
+  .not-found a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .not-found a:hover {
+    background-color: #d00;
+  }
+  
