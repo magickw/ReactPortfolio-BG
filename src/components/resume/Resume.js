@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Grid, Button } from '@mui/material';
 import { PDFViewer, PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 import MyResume from '../../assets/cv.pdf';
+import './Resume.module.scss';
 
 export default function Resume() {
   const renderPDF = () => {
@@ -16,7 +17,7 @@ export default function Resume() {
     return (
         <PDFDownloadLink document={<Document file={MyResume}><Page pageNumber={1} /></Document>} fileName="MyResume.pdf">
         {({ loading }) => (
-          <Button variant="outlined" sx={{ borderColor: 'green' }}>
+          <Button variant="outlined" className="resume-button" sx={{ borderColor: 'green' }}>
             {loading ? 'Loading document...' : 'Download now!'}
           </Button>
         )}
