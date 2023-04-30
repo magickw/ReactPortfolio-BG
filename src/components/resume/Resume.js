@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Button } from '@mui/material';
 import { PDFViewer, PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 import MyResume from '../../assets/cv.pdf';
 
@@ -14,8 +14,12 @@ export default function Resume() {
 
   const renderDownloadLink = () => {
     return (
-      <PDFDownloadLink document={<Document file={MyResume}><Page pageNumber={1} /></Document>} fileName="MyResume.pdf">
-        {({ loading }) => (loading ? 'Loading document...' : 'Download now!')}
+        <PDFDownloadLink document={<Document file={MyResume}><Page pageNumber={1} /></Document>} fileName="MyResume.pdf">
+        {({ loading }) => (
+          <Button variant="outlined" sx={{ borderColor: 'green' }}>
+            {loading ? 'Loading document...' : 'Download now!'}
+          </Button>
+        )}
       </PDFDownloadLink>
     );
   };
