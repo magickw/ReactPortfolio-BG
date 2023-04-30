@@ -9,6 +9,7 @@ import {Box, Grid} from "@mui/material";
 
 
 import Particle from "./Particle";
+import NotFound from './NotFound';
 
 
 export default function BaseLayout() {
@@ -47,6 +48,7 @@ export default function BaseLayout() {
                   <Route exact path={'/'} element={<Home/>}/>
                   <Route exact path={'/about'} element={<About/>}/>
                   <Route exact path={'/portfolio'} element={<Portfolio/>}/>
+                  <Route component={NotFound} />
                </Routes>
             </Grid>
             <Grid item>
