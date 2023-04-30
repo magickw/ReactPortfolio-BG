@@ -26,7 +26,12 @@ const links = [
         name: 'Portfolio',
         to: '/portfolio',
         active: 'portfolio'
-    }
+    },
+    {
+        name: 'Resume',
+        to: '/resume',
+        active: 'resume'
+    },
 ]
 
 export default function Navbar({darkMode, handleClick}) {
@@ -46,9 +51,9 @@ export default function Navbar({darkMode, handleClick}) {
                     </Link>
                  </li>
                 ))}
-                <li>
+                {/* <li>
                     <a href="https://flowcv.com/resume/6mnf9c4to0" target="_blank" rel="noreferrer">résumé</a>
-                </li>
+                </li> */}
                 <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>
