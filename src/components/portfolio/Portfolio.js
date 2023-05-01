@@ -10,7 +10,7 @@ export default function Portfolio() {
         <Box>
             <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
                 <Zoom top>
-                    <h2>Recent Work</h2>
+                    <h1>Recent Work</h1>
                 </Zoom>
             </Box>
             <Grid container display={'flex'} justifyContent={'center'}>
