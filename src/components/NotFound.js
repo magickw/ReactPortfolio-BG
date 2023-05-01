@@ -1,14 +1,15 @@
 import React from 'react';
-import './NotFound.css';
 import { Link } from 'react-router-dom';
+import { Box, Typography } from '@mui/material';
+import styles from './NotFound.module.scss';
 
 function NotFound() {
   return (
-    <div className="not-found">
-      <h1>404 Not Found</h1>
-      <p>Sorry, the page you are looking for could not be found.</p>
-      <Link to="/">Go back to the home page</Link>
-    </div>
+    <Box className={styles.notFound} display='flex' flexDirection='column' alignItems='center' justifyContent='center'>
+      <Typography variant='h1' align='center'>404 Not Found</Typography>
+      <Typography variant='body1' align='center'>Sorry, the page you are looking for could not be found.</Typography>
+      <Link to="/" className={styles.link}>Go back to the home page</Link>
+    </Box>
   );
 }
 

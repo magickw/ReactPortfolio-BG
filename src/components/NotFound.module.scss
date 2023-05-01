@@ -1,29 +1,30 @@
+@import "../variables.modules";
+
 .not-found {
     text-align: center;
     margin-top: 50px;
-  }
   
-  .not-found h1 {
+  h1 {
     font-size: 48px;
-    color: #f00;
+    color: red;
   }
   
-  .not-found p {
+  p {
     font-size: 24px;
     margin-top: 20px;
   }
   
-  .not-found a {
+  a {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #f00;
-    color: #fff;
+    background-color: red;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
   }
   
-  .not-found a:hover {
-    background-color: #d00;
+  a:hover {
+    background-color: red;
   }
-  
+}
