@@ -30,6 +30,9 @@ export default function Resume() {
       {/* <Grid container justifyContent="center">
         {renderPDF()}
       </Grid> */}
+      <Box display="flex" justifyContent="center" fontSize={{ xs: '2rem', md: '2.5rem' }}>
+        {renderDownloadLink()}
+      </Box>
       <Box display="flex" justifyContent="center" >
         {renderPDF()}
       </Box>
