@@ -11,16 +11,10 @@ export default function About() {
 
     function aboutMeText() {
         return <>
-            {/* <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                about{firstName} </p> */}
             <Slide left>
                 <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cat
                     about{firstName} </p>
             </Slide>
-            {/* <p><span style={{ color: info.baseColor }}>about{firstName} <span
-                className={Style.green}>(main)</span> $ </span>
-                {info.bio}
-            </p> */}
             <Slide right>
                 <p><span style={{ color: info.baseColor }}>about{firstName} <span
                     className={Style.green}>(main)</span> $ </span>
@@ -37,13 +31,17 @@ export default function About() {
             <p><span style={{ color: info.baseColor }}>skills/tools <span
                 className={Style.green}>(main)</span> $</span> ls</p>
             <p style={{ color: info.baseColor }}> Proficient With</p>
-            <ul className={Style.skills}>
-                {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
-            </ul>
+            <Slide left>
+                <ul className={Style.skills}>
+                    {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
+                </ul>
+            </Slide>
             <p style={{ color: info.baseColor }}> Exposed To</p>
-            <ul className={Style.skills}>
-                {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
-            </ul>
+            <Slide right>
+                <ul className={Style.skills}>
+                    {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
+                </ul>
+            </Slide>
         </>;
     }
 
@@ -53,11 +51,14 @@ export default function About() {
                 hobbies/interests</p>
             <p><span style={{ color: info.baseColor }}>hobbies/interests <span
                 className={Style.green}>(main)</span> $</span> ls</p>
-            <ul>
-                {info.hobbies.map((hobby, index) => (
-                    <li key={index}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
-                ))}
-            </ul>
+
+            <Slide left>
+                <ul>
+                    {info.hobbies.map((hobby, index) => (
+                        <li key={index}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
+                    ))}
+                </ul>
+            </Slide>
         </>;
     }
 
