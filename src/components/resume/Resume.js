@@ -8,7 +8,9 @@ export default function Resume() {
   const renderPDF = () => {
     return (
       <PDFViewer width="70%" height="800">
-        <iframe src={`${MyResume}`} title="resume" width="100%" height="100%" />
+        <Document file={MyResume} title="myresume" width="100%" height="100%" >
+          <Page pageNumber={1} />
+        </Document>
       </PDFViewer>
     );
   };
