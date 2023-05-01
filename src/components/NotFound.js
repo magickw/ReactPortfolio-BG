@@ -7,7 +7,8 @@ import styles from './NotFound.module.scss';
 function NotFound() {
   return (
     <div className={styles.notFound}>
-      <Typography variant='h1' color='error' align='center'>404 Not Found</Typography>
+      <Typography variant='h1' color='error' align='center'>404</Typography>
+      <Typography variant='h1' color='error' align='center'>Page Not Found</Typography>
       <Typography variant='body1' align='center'>Sorry, the page you are looking for could not be found.</Typography>
       <div className={styles.buttonContainer}>
         <Button
