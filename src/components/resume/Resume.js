@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Alert } from '@mui/material';
 import { PDFViewer, PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 import MyResume from './cv.pdf?raw';
 import Style from './Resume.module.scss';
@@ -29,6 +29,9 @@ export default function Resume() {
 
   return (
     <Box>
+      <Box display="flex" justifyContent="center">
+        <Alert severity="error" width="50%">I am facing difficulty showing my resume on the webpage using react-pdf/renderer npm library. Before I fix the issue, you can click <a href='src/components/resume/cv.pdf'>here</a> to download my CV.</Alert>
+        </Box>
       <PDFDownloadLinkComponent />
       <PDFViewerComponent />
       <PDFDownloadLinkComponent />
