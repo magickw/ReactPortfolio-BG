@@ -13,7 +13,17 @@ import Style from './BaseLayout.module.scss';
 
 function Footer({ currentYear }) {
   return (
-    <Box component='footer' display='flex' flexDirection='column' alignItems='center' py='1.5rem' sx={{opacity: 0.7}} width='100%'>
+    <Box
+      component='footer'
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      px={{ xs: 2, sm: 4 }}
+      py={{ xs: 4, sm: 6 }}
+      pl={{ xs: 2, sm: 4 }}
+      sx={{ opacity: 0.7 }}
+      width="100%"
+      >
       <VisitorLocation />
       <p>Welcome to my portfolio website. The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
       <p>&copy; {currentYear}</p>
@@ -49,10 +59,10 @@ export default function BaseLayout() {
       <Grid container display='flex' flexDirection='column' minHeight='100vh' justifyContent='space-between'>
         <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
         <Routes>
-          <Route exact path='/' element={<Home/>} />
-          <Route exact path='/about' element={<About/>} />
-          <Route exact path='/portfolio' element={<Portfolio/>} />
-          <Route exact path='/resume' element={<Resume/>} />
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/portfolio' element={<Portfolio />} />
+          <Route exact path='/resume' element={<Resume />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer currentYear={currentYear} />
