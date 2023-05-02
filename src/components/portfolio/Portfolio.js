@@ -10,7 +10,17 @@ export default function Portfolio() {
         <Box>
             <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
                 <Zoom top>
-                    <h1>Recent Work</h1>
+                    <h1>
+                        <span
+                            style={{
+                                background: info.gradient,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            Recent Work
+                        </span>
+                    </h1>
                 </Zoom>
             </Box>
             <Grid container display={'flex'} justifyContent={'center'}>
