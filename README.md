@@ -1,5 +1,7 @@
 # React Portfolio, multiple pages with dark/light mode toggler
 
+Simplified Chinese: 国宝/Traditional Chinese: 國寶 (pronouced: guóbǎo), literally means 'national treasure'. China's national treasure is the giant panda, commonly known as the panda.
+
 ![image](./src/assets/logo.png)
 
 ## demo
