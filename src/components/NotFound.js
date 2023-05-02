@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft as ArrowLeftIcon } from '@mui/icons-material';
 import Style from './NotFound.module.scss';
 
-function NotFound() {
+export default function NotFound() {
   return (
     <div className={Style.notFound}>
       <Typography variant='h1' color='error' align='center'>404</Typography>
@@ -26,4 +26,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+
