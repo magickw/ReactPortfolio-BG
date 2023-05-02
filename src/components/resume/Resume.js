@@ -30,7 +30,7 @@ export default function Resume() {
   return (
     <Box>
       <Box display="flex" justifyContent="center">
-        <Alert severity="error" width="50%">I am facing difficulty showing my resume on the webpage using react-pdf/renderer npm library. Before I fix the issue, you can click <a href='src/components/resume/cv.pdf'>here</a> to download my CV.</Alert>
+        <Alert severity="error" width="50%">I am having trouble displaying my resume on the webpage using the react-pdf/renderer npm library. While I work to fix the issue, you can download my CV by clicking <a href='src/components/resume/cv.pdf'>here</a>.</Alert>
         </Box>
       <PDFDownloadLinkComponent />
       <PDFViewerComponent />
