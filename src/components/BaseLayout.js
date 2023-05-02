@@ -13,7 +13,7 @@ import Style from './BaseLayout.module.scss';
 function Footer({ currentYear }) {
   return (
     <Box component='footer' display='flex' flexDirection='column' alignItems='center' py='1.5rem' sx={{opacity: 0.7}} width='100%'>
-      <p>Thank you for visiting my portfolio website. The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
+      <p>Welcome to my portfolio website. The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
       <p>&copy; {currentYear}</p>
     </Box>
   );
