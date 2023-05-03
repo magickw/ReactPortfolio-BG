@@ -20,7 +20,6 @@ function Footer({ currentYear }) {
       alignItems='center'
       px={{ xs: 2, sm: 3 }}
       py={{ xs: 2, sm: 3 }}
-      pl={{ xs: 2, sm: 3 }}
       sx={{ opacity: 0.7 }}
       width="100%"
       >
