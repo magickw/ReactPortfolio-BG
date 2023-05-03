@@ -95,7 +95,7 @@ export const info = {
         },
        {
             title: "AstroDash",
-            live: "https://dazedchou.github.io/Astronomy-Dashboard", 
+            live: "https://magickw.github.io/Astronomy-Dashboard/", 
             description: "Astronomy Dashboard uses geolocation functions and weather API to present the weather conditions such as visibility and cloudiness, and moon phases.",
             source: "https://github.com/DazedChou/Astronomy-Dashboard", 
             image: AstroDash

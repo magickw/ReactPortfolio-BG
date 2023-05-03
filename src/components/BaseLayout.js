@@ -18,9 +18,9 @@ function Footer({ currentYear }) {
       display='flex'
       flexDirection='column'
       alignItems='center'
-      px={{ xs: 2, sm: 4 }}
-      py={{ xs: 4, sm: 6 }}
-      pl={{ xs: 2, sm: 4 }}
+      px={{ xs: 2, sm: 3 }}
+      py={{ xs: 2, sm: 3 }}
+      pl={{ xs: 2, sm: 3 }}
       sx={{ opacity: 0.7 }}
       width="100%"
       >
