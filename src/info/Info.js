@@ -88,14 +88,14 @@ export const info = {
         
         {
             title: "Text Editor",
-            live: "https://jate-bfguo.herokuapp.com/", 
+            live: "https://jate-bfguo.herokuapp.com", 
             description: "This application takes an existing text editor app and adds functionality for it to work as a PWA and function offline. ",
             source: "https://github.com/magickw/TextEditor",
             image: TextEditor
         },
        {
             title: "AstroDash",
-            live: "https://magickw.github.io/Astronomy-Dashboard/", 
+            live: "https://magickw.github.io/Astronomy-Dashboard", 
             description: "Astronomy Dashboard uses geolocation functions and weather API to present the weather conditions such as visibility and cloudiness, and moon phases.",
             source: "https://github.com/DazedChou/Astronomy-Dashboard", 
             image: AstroDash

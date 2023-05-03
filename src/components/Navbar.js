@@ -8,6 +8,11 @@ import {Box} from "@mui/material";
 
 const links = [
     {
+        image: logo,
+        to: '/',
+        active: 'home'
+     },
+     {
         name: 'Home',
         to: '/',
         active: 'home'
@@ -17,11 +22,7 @@ const links = [
         to: '/about',
         active: 'about'
     },
-    {
-        image: logo,
-        to: '/',
-        active: 'home'
-     },
+    
     {
         name: 'Portfolio',
         to: '/portfolio',
