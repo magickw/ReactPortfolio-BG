@@ -7,7 +7,7 @@ $yellow: #FFBD2E;
 $green: #27C93F;
 $lightgray: #c9c9c9;
 
-$transition: all 250ms ease;
+$transition: all 0.5s ease-out 0s !important;
 
 .shadowed {
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.4);

@@ -10,7 +10,7 @@ export default function NotFound() {
     <div className={Style.notFound}>
       <Zoom top>
         <Typography variant='h1' color='error' align='center'>404</Typography>
-        <Typography variant='h1' color='error' align='center'>Page Not Found</Typography>
+        <Typography variant='h1' color='error' align='center'>Oops, Page Not Found</Typography>
       </Zoom>
 
       <Typography variant='body1' align='center'>Sorry, the page you are looking for could not be found.</Typography>
