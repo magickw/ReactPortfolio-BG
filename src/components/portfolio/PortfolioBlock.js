@@ -18,7 +18,7 @@ function PortfolioBlock(props) {
          pt={5}
          onMouseEnter={() => setIsHover(true)}
          onMouseLeave={() => setIsHover(false)}
-         style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)' }}
+         style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)'}}
          transition="transform 0.3s ease-in-out"
       >
          <Box component={'img'} src={image} alt={'projects'} />
@@ -37,13 +37,14 @@ function PortfolioBlock(props) {
             <div>Tech Stacks:&nbsp;</div>
             <ul style={{ margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap' }}>
                {techStacks.map((techStack) => (
-                  <li key={techStack} style={{ border: '2px solid green',
-                  borderRadius: '3px', marginRight: '10px' }}>{techStack}</li>
+                  <li key={techStack} style={{
+                     border: '1px solid green', borderRadius: '3px', padding: '1px', marginRight: '10px'
+                  }}>{techStack}</li>
                ))}
             </ul>
          </Stack>
          <Box className={'portfolio'} display={'flex'} flexDirection={'row'} gap={'0.5rem'}
-            alignItems={'center'} fontSize={'1.5rem'} py={'1rem'} justifyContent={'space-between'}>
+            alignItems={'center'} fontSize={'1rem'} py={'1rem'} justifyContent={'space-between'}>
             <Box p={1} border={'2px solid green'} borderRadius={'15px'}>
                <IconLink link={live} title={'View Site'} icon={'fa fa-link'} />
             </Box>

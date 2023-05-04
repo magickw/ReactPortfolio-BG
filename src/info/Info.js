@@ -5,7 +5,7 @@ import CodeQuiz from "../assets/codequiz.gif"
 import WeatherDashboard from "../assets/WeatherDashboard.gif"
 import scheduler from "../assets/scheduler.gif"
 import notetaker from "../assets/notetaker.gif"
-// import techblog from "../assets/techblog.gif"
+import techblog from "../assets/techblog.gif"
 
 
 export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
@@ -126,6 +126,15 @@ export const info = {
             source: "https://github.com/magickw/Work-Day-Scheduler",
             image: scheduler
         },
+
+        {
+            title: "Tech Blog",
+            live: "https://guotechblog.herokuapp.com/",
+            description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
+            techStacks: ["Node.js", "Express.js", "handlebars"],
+            source: "https://github.com/magickw/MVCTechBlog",
+            image: techblog
+        },
         {
             title: "Note Taker",
             live: "https://notetaker-guo.herokuapp.com/",
@@ -134,13 +143,5 @@ export const info = {
             source: "https://github.com/magickw/NoteTaker",
             image: notetaker
         },
-        // {
-        //     title: "Tech Blog",
-        //     live: "https://guotechblog.herokuapp.com/",
-        //     description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
-        //     techStacks: ["Node.js", "Express.js", "handlebars"],
-        //     source: "https://github.com/magickw/MVCTechBlog",
-        //     image: techblog
-        // }
     ]
 }
