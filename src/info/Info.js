@@ -90,7 +90,7 @@ export const info = {
             title: "Text Editor",
             live: "https://jate-bfguo.herokuapp.com", 
             description: "This application takes an existing text editor app and adds functionality for it to work as a PWA and function offline. ",
-            techStacks: ["React", "Node.js", "Express.js", "WPA", "Heroku"],
+            techStacks: ["React", "Node.js", "Express.js", "PWA"],
             source: "https://github.com/magickw/TextEditor",
             image: TextEditor
         },
@@ -131,7 +131,7 @@ export const info = {
             title: "Tech Blog",
             live: "https://guotechblog.herokuapp.com/",
             description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
-            techStacks: ["Node.js", "Express.js", "handlebars"],
+            techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
             source: "https://github.com/magickw/MVCTechBlog",
             image: techblog
         },
@@ -139,7 +139,7 @@ export const info = {
             title: "Note Taker",
             live: "https://notetaker-guo.herokuapp.com/",
             description: "This application allows you to write notes, save notes and deletes that are being stored in a db.json file.",
-            techStacks: ["Javascript", "HTML", "CSS", "Express.js"],
+            techStacks: ["Javascript", "Express.js", "Node.js"],
             source: "https://github.com/magickw/NoteTaker",
             image: notetaker
         },
