@@ -20,6 +20,7 @@ export default function Resume() {
 
   return (
     <Box>
+       
       <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
         <Zoom top>
           <h1>
@@ -35,6 +36,18 @@ export default function Resume() {
           </h1>
         </Zoom>
       </Box>
+      <Box display="flex" justifyContent="center" mb={2}>
+        <Button
+          href={MyResume}
+          download="Baofeng_Guo_Resume.pdf"
+          variant="outlined"
+          className={Style.resumeButton}
+          sx={{ borderColor: 'green' }}
+        >
+          <FaDownload />
+          &nbsp;Download CV
+        </Button>
+      </Box>
 
       <Box display="flex" justifyContent="center">
         <Document file={MyResume} style={{ position: "relative" }}>
@@ -45,7 +58,7 @@ export default function Resume() {
       <Box display="flex" justifyContent="center" mb={2}>
         <Button
           href={MyResume}
-          target="_blank"
+          download="Baofeng_Guo_Resume.pdf"
           variant="outlined"
           className={Style.resumeButton}
           sx={{ borderColor: 'green' }}
