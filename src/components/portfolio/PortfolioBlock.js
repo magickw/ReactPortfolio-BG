@@ -24,11 +24,21 @@ function PortfolioBlock(props) {
          <Box component={'img'} src={image} alt={'projects'} />
          <h1 style={{ fontSize: '2rem' }}>{title}</h1>
          <h1 style={{ fontSize: '1rem' }}>{description}</h1>
-         <Stack direction="row" spacing={2} style={{ fontSize: '1rem' }}>
+         <Stack
+            sx={{
+               display: 'flex',
+               justifyContent: 'center',
+               alignItems: 'center',
+               fontSize: '1rem'
+            }}
+            direction="row"
+            spacing={2}
+         >
             <div>Tech Stacks:&nbsp;</div>
-            <ul style={{ display: 'inline-block', margin: 0, padding: 0 }}>
+            <ul style={{ margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap' }}>
                {techStacks.map((techStack) => (
-                  <li key={techStack}>{techStack}</li>
+                  <li key={techStack} style={{ border: '2px solid green',
+                  borderRadius: '3px', marginRight: '10px' }}>{techStack}</li>
                ))}
             </ul>
          </Stack>
