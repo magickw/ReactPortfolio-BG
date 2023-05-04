@@ -12,13 +12,7 @@ import Resume from './resume/Resume';
 import Style from './BaseLayout.module.scss';
 
 function Footer({ currentYear }) {
-  const [visitorCount, setVisitorCount] = useState(0);
 
-  useEffect(() => {
-    const count = parseInt(localStorage.getItem('visitorCount')) || 0;
-    setVisitorCount(count + 1);
-    localStorage.setItem('visitorCount', count + 1);
-  }, []);
   return (
     <Box
       component='footer'
@@ -31,7 +25,7 @@ function Footer({ currentYear }) {
       width="100%"
       >
       <VisitorLocation />
-      <p>{visitorCount} visitors have visited this website. The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
+      <p>The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
       <p>&copy; {currentYear}</p>
     </Box>
   );
