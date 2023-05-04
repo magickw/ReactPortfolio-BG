@@ -3,6 +3,7 @@ import Style from './About.module.scss';
 import Terminal from "./Terminal";
 import { Box } from "@mui/material";
 import { info } from "../../info/Info";
+import Zoom from 'react-reveal/Zoom';
 
 import Slide from 'react-reveal/Slide';
 
@@ -26,6 +27,7 @@ export default function About() {
 
     function skillsText() {
         return <>
+        
             <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cd skills/tools
             </p>
             <p><span style={{ color: info.baseColor }}>skills/tools <span
@@ -63,10 +65,27 @@ export default function About() {
     }
 
     return (
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
+        
+        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'1rem'}>
+            <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
+                <Zoom top>
+                    <h1>
+                        <span
+                            style={{
+                                background: info.gradient,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            About Me
+                        </span>
+                    </h1>
+                </Zoom>
+            </Box>
             <Terminal text={aboutMeText()} />
             <Terminal text={skillsText()} />
             <Terminal text={miscText()} />
         </Box>
+        
     )
 }
