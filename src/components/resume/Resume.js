@@ -1,105 +1,42 @@
-import React from 'react';
-import { Box, Button, Alert } from '@mui/material';
-import { PDFViewer, PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import React, { useState, useEffect } from "react";
+import { Box, Button } from '@mui/material';
 import MyResume from './Baofeng_Guo_Resume.pdf?raw';
+import { FaDownload } from "react-icons/fa";
+import { Document, Page, pdfjs } from "react-pdf";
 import Style from './Resume.module.scss';
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
 
 export default function Resume() {
-  const PDFViewerComponent = () => (
-    <Box display="flex" justifyContent="center">
-      <PDFViewer width="70%" height="800">
-        <Document file={MyResume} title="myresume" width="100%" height="100%">
-          <Page pageNumber={1} />
-        </Document>
-      </PDFViewer>
-    </Box>
-  );
+  const [width, setWidth] = useState(1200);
+  
 
-  const PDFDownloadLinkComponent = () => (
-    <Box display="flex" justifyContent="center" fontSize={{ xs: '2rem', md: '2.5rem' }}>
-      <PDFDownloadLink document={<Document file={MyResume}><Page pageNumber={1} /></Document>} fileName="BaofengResume.pdf">
-        {({ loading }) => (
-          <Button variant="outlined" className={Style.resumeButton} sx={{ borderColor: 'green' }}>
-            {loading ? 'Loading document...' : 'Download CV'}
-          </Button>
-        )}
-      </PDFDownloadLink>
-    </Box>
-  );
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <Box>
-      <Box
-        display="flex"
-        justifyContent="center"
-      >
-        <Alert
-          severity="error"
-          sx={{
-            width: '50%',
-            '@media (max-width: 600px)': {
-              width: '90%',
-            }
-          }}>I am having trouble displaying my resume on the webpage using the react-pdf/renderer npm library. While I work to fix the issue, you can download my CV by clicking <a href={MyResume}>here</a>.</Alert>
+      <Box display="flex" justifyContent="center" mb={2}>
+        <Button
+          href={MyResume}
+          target="_blank"
+          variant="outlined"
+          className={Style.resumeButton}
+          sx={{ borderColor: 'green' }}
+        >
+          <FaDownload />
+          &nbsp;Download CV
+        </Button>
       </Box>
-      <PDFDownloadLinkComponent />
-      <PDFViewerComponent />
-      <PDFDownloadLinkComponent />
+
+      <Box display="flex" justifyContent="center">
+        <Document file={MyResume} style={{ position: "relative" }}>
+          <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+        </Document>
+      </Box>
     </Box>
   );
-};
+}
 
-// import React, { useState } from 'react';
-// import { Document, Page } from 'react-pdf';
-// import { Box, Button } from '@mui/material';
-// import MyResume from './cv.pdf?raw';
-// import Style from './Resume.module.scss';
-// import * as FileSaver from 'file-saver';
-
-// export default function Resume() {
-//   const [numPages, setNumPages] = useState(null);
-//   const [pageNumber, setPageNumber] = useState(1);
-//   const [loading, setLoading] = useState(false);
-
-//   function onDocumentLoadSuccess({ numPages }) {
-//     setNumPages(numPages);
-//     setPageNumber(1);
-//   }
-
-//   function onDownloadClick() {
-//     setLoading(true);
-//     fetch(MyResume)
-//       .then(res => res.blob())
-//       .then(blob => {
-//         FileSaver.saveAs(blob, 'my_resume.pdf');
-//         setLoading(false);
-//       });
-//   }
-
-//   return (
-//     <Box>
-//       <Box display="flex" justifyContent="center">
-//         <Document file={MyResume} onLoadSuccess={onDocumentLoadSuccess}>
-//           <Page pageNumber={pageNumber} />
-//         </Document>
-//         <p>
-//           Page {pageNumber} of {numPages}
-//         </p>
-//       </Box>
-//       <Box
-//         display="flex"
-//         justifyContent="center"
-//         fontSize={{ xs: '2rem', md: '2.5rem' }}
-//       >
-//         <Button
-//           variant="outlined"
-//           className={Style.resumeButton}
-//           sx={{ borderColor: 'green' }}
-//           onClick={onDownloadClick}
-//         >
-//           {loading ? 'Loading document...' : 'Download now!'}
-//         </Button>
-//       </Box>
-//     </Box>
-//   );
-// }
