@@ -1,22 +1,25 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
 import { Box, Button } from '@mui/material';
 import MyResume from './Baofeng_Guo_Resume.pdf?raw';
 import { FaDownload } from "react-icons/fa";
-import { Document, Page, pdfjs } from "react-pdf";
+
 import { info } from "../../info/Info";
 import Zoom from 'react-reveal/Zoom';
 import Style from './Resume.module.scss';
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+// import { Document, Page, pdfjs } from "react-pdf";
+// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 
 export default function Resume() {
-  const [width, setWidth] = useState(1200);
+  // const [width, setWidth] = useState(1200);
 
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // }, []);
 
   return (
     <Box>
@@ -50,9 +53,10 @@ export default function Resume() {
       </Box>
 
       <Box display="flex" justifyContent="center">
-        <Document file={MyResume} style={{ position: "relative" }}>
+        {/* <Document file={MyResume} >
           <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-        </Document>
+        </Document> */}
+        <embed src={`${MyResume}#page=1`} justifyContent="center" type="application/pdf" width="60%" height="1000px"></embed>
       </Box>
 
       <Box display="flex" justifyContent="center" mb={2}>
