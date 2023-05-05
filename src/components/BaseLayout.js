@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, CircularProgress } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Box, CircularProgress, Grid } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import VisitorLocation from './VisitorLocation';
 import About from './about/About';
@@ -11,6 +11,7 @@ import Resume from './resume/Resume';
 import Style from './BaseLayout.module.scss';
 
 function Footer({ currentYear }) {
+
   return (
     <Box
       component='footer'
@@ -19,11 +20,11 @@ function Footer({ currentYear }) {
       alignItems='center'
       px={{ xs: 2, sm: 3 }}
       py={{ xs: 2, sm: 3 }}
-      sx={{ opacity: 0.7, fontSize: "0.9rem" }}
+      sx={{ opacity: 0.7, fontSize: '0.9rem' }}
       width="100%"
     >
       <VisitorLocation />
-      <p>The website was adapted based on the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
+      <p>Welcome to my portfolio website. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
       <p>&copy; {currentYear}</p>
     </Box>
   );
@@ -60,7 +61,6 @@ export default function BaseLayout() {
 
   return (
     <Box className={darkMode ? Style.dark : Style.light}>
-      <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
       {isLoading ? (
         <Box
           display='flex'
@@ -71,15 +71,18 @@ export default function BaseLayout() {
           <CircularProgress />
         </Box>
       ) : (
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/about' element={<About />} />
-          <Route exact path='/portfolio' element={<Portfolio />} />
-          <Route exact path='/resume' element={<Resume />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <Grid container display='flex' flexDirection='column' minHeight='100vh' justifyContent='space-between'>
+          <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/about' element={<About />} />
+            <Route exact path='/portfolio' element={<Portfolio />} />
+            <Route exact path='/resume' element={<Resume />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+          <Footer currentYear={currentYear} />
+        </Grid>
       )}
-      <Footer currentYear={currentYear} />
     </Box>
   );
 }
