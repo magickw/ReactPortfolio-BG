@@ -31,7 +31,7 @@ export default function Resume() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              Expierence & Education
+              Experience & Education
             </span>
           </h1>
         </Zoom>
