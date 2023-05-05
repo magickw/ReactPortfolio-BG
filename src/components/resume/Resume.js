@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button } from '@mui/material';
+import { Box, Button, CircularProgress } from '@mui/material';
 import MyResume from './Baofeng_Guo_Resume.pdf?raw';
 import { FaDownload } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -12,10 +12,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 export default function Resume() {
   const [width, setWidth] = useState(1200);
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setWidth(window.innerWidth);
+    setLoading(false);
   }, []);
 
   return (
@@ -49,11 +50,17 @@ export default function Resume() {
         </Button>
       </Box>
 
-      <Box display="flex" justifyContent="center">
-        <Document file={MyResume} style={{ position: "relative" }}>
-          <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-        </Document>
-      </Box>
+      {loading ? (
+        <Box display="flex" justifyContent="center" alignItems="center" height="50vh">
+          <CircularProgress />
+        </Box>
+      ) : (
+        <Box display="flex" justifyContent="center">
+          <Document file={MyResume} style={{ position: "relative" }}>
+            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} onLoadSuccess={() => setLoading(false)} />
+          </Document>
+        </Box>
+      )}
 
       <Box display="flex" justifyContent="center" mb={2}>
         <Button
@@ -70,4 +77,3 @@ export default function Resume() {
     </Box>
   );
 }
-
