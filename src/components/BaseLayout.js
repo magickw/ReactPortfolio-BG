@@ -6,7 +6,6 @@ import About from './about/About';
 import Home from './home/Home';
 import Navbar from './Navbar';
 import NotFound from './NotFound';
-import Particle from './Particle';
 import Portfolio from './portfolio/Portfolio';
 import Resume from './resume/Resume';
 import Style from './BaseLayout.module.scss';
@@ -55,7 +54,6 @@ export default function BaseLayout() {
 
   return (
     <Box className={darkMode ? Style.dark : Style.light}>
-      <Particle />
       <Grid container display='flex' flexDirection='column' minHeight='100vh' justifyContent='space-between'>
         <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
         <Routes>

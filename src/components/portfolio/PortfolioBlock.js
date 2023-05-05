@@ -34,7 +34,6 @@ function PortfolioBlock(props) {
             direction="row"
             spacing={2}
          >
-            <div>Tech Stacks:&nbsp;</div>
             <ul style={{ margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap' }}>
                {techStacks.map((techStack) => (
                   <li key={techStack} style={{
