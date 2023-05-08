@@ -69,30 +69,23 @@ export default function Contact() {
         </Zoom>
       </Box>
       <Grid container
+      
         flexDirection="column"
         justifyContent="center"
         xs={12}
         md={6}
-        pr={10}
-        pl={15}
-        pt={5}
+        paddingLeft='220px'
       >
         <h1 justifyContent="center"style={{ fontSize: '2rem' }}>Get in Touch</h1>
+        <h1 justifyContent="center"style={{ fontSize: '1rem' }}>Ask me something about translation and web development.</h1>
         <form ref={formRef} onSubmit={handleSubmit}>
-        <Grid item
-          xs={12}
-          md={6}
-          pr={10}
-          pl={10}
-          pt={5}>
+        <Grid item>
           <FormControl>
             <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Name
               <Input
                 type="text"
                 style={{ display: "block", fontSize: "1.2rem" }}
-                py={5}
-                px={7}
                 id="name"
                 name="name"
                 value={form.name}
@@ -106,8 +99,6 @@ export default function Contact() {
                 type="email"
                 id="email"
                 style={{ display: "block", fontSize: "1.2rem" }}
-                py={5}
-                px={7}
                 name="email"
                 value={form.email}
                 onChange={handleChange}
@@ -117,17 +108,16 @@ export default function Contact() {
             <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Message
               <TextField
-                rows={5}
-                rowsMax={10}
                 id="message"
                 name="message"
-                style={{ display: "block", height: "200px", fontSize: "1.2rem" }}
+                rows={10}
+                style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Enter your message"
               />
             </label>
-            <Button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
+            <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
             <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
           </FormControl>
         </Grid>
