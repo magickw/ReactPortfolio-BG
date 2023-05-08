@@ -47,7 +47,7 @@ export default function Navbar({darkMode, handleClick}) {
     return (
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}
-                 gap={{xs: '1rem', md: '8rem'}}
+                 gap={{xs: '1rem', md: '6rem'}}
                  textTransform={'lowercase'} fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>
@@ -57,9 +57,6 @@ export default function Navbar({darkMode, handleClick}) {
                     </Link>
                  </li>
                 ))}
-                {/* <li>
-                    <a href="https://flowcv.com/resume/6mnf9c4to0" target="_blank" rel="noreferrer">résumé</a>
-                </li> */}
                 <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>

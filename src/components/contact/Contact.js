@@ -1,10 +1,7 @@
 import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
 import { Box, Grid } from "@mui/material";
-import { FormControl } from '@mui/material';
-
-
 
 export default function Contact() {
   const formRef = useRef();
@@ -25,16 +22,10 @@ export default function Contact() {
     setLoading(true);
 
     emailjs
-      .send(
+      .sendForm(
         "service_98gcanw",
         "template_gsxbx5s",
-        {
-          form_name: form.name,
-          to_name: "Baofeng",
-          from_email: form.email,
-          to_email: "peterguo1983@mail.com",
-          message: form.message,
-        },
+        formRef.current,
         "bRFNyC96pqXU0fvGI"
       )
       .then(
@@ -58,59 +49,51 @@ export default function Contact() {
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
-
-        <p>Get in touch</p>
-        <h3>Contact.</h3>
-
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className=""
-        >
-          <label className="">
-            <span className="">Your Name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your name?"
-              className=""
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your email?"
-              className=""
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="">Your Message</span>
-            <textarea
-              rows={7}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What do you want to say?"
-              className=""
-            />
-          </label>
-
-          <button
-            type="submit"
-            className=""
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </form>
-    </div>
+    <Box display={'flex'} justifyContent={'center'}>
+      <Grid container item md={6} spacing={2}>
+        <Grid item xs={12}>
+          <h2>Get in Touch</h2>
+          <h1>Contact</h1>
+        </Grid>
+        <Grid item xs={12}>
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <label htmlFor="name">
+              Your Name
+              <input
+                type="text"
+                id="name"
+                name="from_name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+              />
+            </label>
+            <label htmlFor="email">
+              Your Email
+              <input
+                type="email"
+                id="email"
+                name="from_email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+              />
+            </label>
+            <label htmlFor="message">
+              Your Message
+              <textarea
+                rows={5}
+                id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+              />
+            </label>
+            <button type="submit">{loading ? "Sending..." : "Send"}</button>
+          </form>
+        </Grid>
+      </Grid>
+    </Box>
   );
-};
+}
