@@ -52,29 +52,30 @@ export default function Contact() {
 
   return (
     <Box>
-            <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
-                <Zoom top>
-                    <h1>
-                        <span
-                            style={{
-                                background: info.gradient,
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                            }}
-                        >
-                            Contact Me
-                        </span>
-                    </h1>
-                </Zoom>
-            </Box>
-      <Grid container display={'flex'} flexDirection={'column'} justifyContent={'center'}>
-          <h2>Get in Touch</h2>
+      <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
+        <Zoom top>
+          <h1>
+            <span
+              style={{
+                background: info.gradient,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Contact Me
+            </span>
+          </h1>
+        </Zoom>
+      </Box>
+      <Grid container flexDirection="column" justifyContent="center">
+        <h1 style={{ fontSize: '2rem' }}>Get in Touch</h1>
         <Grid item xs={12} md={6}>
           <form ref={formRef} onSubmit={handleSubmit}>
-            <label htmlFor="name">
+            <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Name
               <input
                 type="text"
+                style={{ display: "block", fontSize: "1.2rem" }}
                 id="name"
                 name="from_name"
                 value={form.name}
@@ -82,29 +83,31 @@ export default function Contact() {
                 placeholder="Enter your name"
               />
             </label>
-            <label htmlFor="email">
+            <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Email
               <input
                 type="email"
                 id="email"
+                style={{ display: "block", fontSize: "1.2rem" }}
                 name="from_email"
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
               />
             </label>
-            <label htmlFor="message">
+            <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Message
               <textarea
                 rows={5}
                 id="message"
                 name="message"
+                style={{ display: "block", fontSize: "1.2rem" }}
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Enter your message"
               />
             </label>
-            <button type="submit">{loading ? "Sending..." : "Send"}</button>
+            <button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</button>
           </form>
         </Grid>
       </Grid>
