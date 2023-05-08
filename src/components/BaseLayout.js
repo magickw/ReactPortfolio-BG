@@ -25,8 +25,8 @@ function Footer({ currentYear }) {
       width="100%"
       >
       <VisitorLocation />
-      <p>Welcome to my portfolio website. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a></p>
-      <p>Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A &copy; {currentYear}</p>
+      <p>Welcome to my portfolio website. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a> &copy; {currentYear}</p>
+      <p>Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
     </Box>
   );
 }
