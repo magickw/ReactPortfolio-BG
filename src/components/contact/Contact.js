@@ -13,6 +13,7 @@ export default function Contact() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +34,7 @@ export default function Contact() {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          setMessage("<div>Thank you. I will get back to you as soon as possible.</div>");
 
           setForm({
             name: "",
@@ -45,7 +46,7 @@ export default function Contact() {
           setLoading(false);
 
           console.log(error);
-          alert("Something went wrong.");
+          setMessage("<div>Something went wrong.</div>");
         }
       );
   };
@@ -77,7 +78,7 @@ export default function Contact() {
         pt={5}
       >
         <h1 justifyContent="center"style={{ fontSize: '2rem' }}>Get in Touch</h1>
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
         <Grid item
           xs={12}
           md={6}
@@ -127,6 +128,7 @@ export default function Contact() {
               />
             </label>
             <Button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
+            <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
           </FormControl>
         </Grid>
         </form>
