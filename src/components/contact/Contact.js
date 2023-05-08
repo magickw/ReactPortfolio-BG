@@ -77,13 +77,14 @@ export default function Contact() {
         pt={5}
       >
         <h1 justifyContent="center"style={{ fontSize: '2rem' }}>Get in Touch</h1>
+        <form onSubmit={handleSubmit}>
         <Grid item
           xs={12}
           md={6}
           pr={10}
           pl={10}
           pt={5}>
-          <FormControl ref={formRef} onSubmit={handleSubmit}>
+          <FormControl>
             <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Name
               <Input
@@ -92,7 +93,7 @@ export default function Contact() {
                 py={5}
                 px={7}
                 id="name"
-                name="from_name"
+                name="name"
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
@@ -106,7 +107,7 @@ export default function Contact() {
                 style={{ display: "block", fontSize: "1.2rem" }}
                 py={5}
                 px={7}
-                name="from_email"
+                name="email"
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
@@ -116,9 +117,10 @@ export default function Contact() {
               Your Message
               <TextField
                 rows={5}
+                rowsMax={10}
                 id="message"
                 name="message"
-                style={{ display: "block", fontSize: "1.2rem" }}
+                style={{ display: "block", height: "200px", fontSize: "1.2rem" }}
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Enter your message"
@@ -127,7 +129,9 @@ export default function Contact() {
             <Button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
           </FormControl>
         </Grid>
+        </form>
       </Grid>
+      
     </Box>
   );
 }
