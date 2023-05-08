@@ -10,6 +10,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
@@ -39,6 +40,7 @@ export default function Contact() {
           setForm({
             name: "",
             email: "",
+            subject: "",
             message: "",
           });
         },
@@ -103,6 +105,18 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
+              />
+            </label>
+            <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
+              Subject
+              <Input
+                type="subject"
+                id="email"
+                style={{ display: "block", fontSize: "1.2rem" }}
+                name="Subject"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Enter subject"
               />
             </label>
             <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
