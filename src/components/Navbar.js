@@ -47,7 +47,7 @@ export default function Navbar({darkMode, handleClick}) {
     return (
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}
-                 gap={{xs: '1rem', md: '6rem'}}
+                 gap={{xs: '0.8rem', md: '6rem'}}
                  textTransform={'lowercase'} fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>

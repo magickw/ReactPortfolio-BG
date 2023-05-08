@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 
 import { Box, Grid } from "@mui/material";
+import { info } from "../../info/Info";
+import Zoom from 'react-reveal/Zoom';
 
 export default function Contact() {
   const formRef = useRef();
@@ -49,13 +51,25 @@ export default function Contact() {
   };
 
   return (
-    <Box display={'flex'} justifyContent={'center'}>
-      <Grid container item md={6} spacing={2}>
-        <Grid item xs={12}>
+    <Box>
+            <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
+                <Zoom top>
+                    <h1>
+                        <span
+                            style={{
+                                background: info.gradient,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            Contact Me
+                        </span>
+                    </h1>
+                </Zoom>
+            </Box>
+      <Grid container display={'flex'} flexDirection={'column'} justifyContent={'center'}>
           <h2>Get in Touch</h2>
-          <h1>Contact</h1>
-        </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={6}>
           <form ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="name">
               Your Name
