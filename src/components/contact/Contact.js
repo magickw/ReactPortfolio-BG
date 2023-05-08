@@ -71,73 +71,81 @@ export default function Contact() {
         </Zoom>
       </Box>
       <Grid container
-      
+
         flexDirection="column"
         justifyContent="center"
         xs={12}
         md={6}
-        paddingLeft='220px'
+        sx={{
+          padding: '40px',
+          '@media (min-width: 960px)': {
+            paddingLeft: '250px',
+            paddingRight: '250px',
+            paddingTop: '20px',
+            paddingBottom: '20px',
+          },
+        }}
       >
-        <h1 justifyContent="center"style={{ fontSize: '2rem' }}>Get in Touch</h1>
-        <h1 justifyContent="center"style={{ fontSize: '1rem' }}>Ask me something about translation and web development.</h1>
+        <h1 justifyContent="center" style={{ fontSize: '2rem' }}>Get in Touch</h1>
+        <h1 justifyContent="center" style={{ fontSize: '1rem' }}>Ask me something about translation and web development.</h1>
         <form ref={formRef} onSubmit={handleSubmit}>
-        <Grid item>
-          <FormControl>
-            <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
-              Your Name
-              <Input
-                type="text"
-                style={{ display: "block", fontSize: "1.2rem" }}
-                id="name"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-              />
-            </label>
-            <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
-              Your Email
-              <Input
-                type="email"
-                id="email"
-                style={{ display: "block", fontSize: "1.2rem" }}
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-              />
-            </label>
-            <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
-              Subject
-              <Input
-                type="subject"
-                id="email"
-                style={{ display: "block", fontSize: "1.2rem" }}
-                name="Subject"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter subject"
-              />
-            </label>
-            <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
-              Your Message
-              <TextField
-                id="message"
-                name="message"
-                rows={10}
-                style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Enter your message"
-              />
-            </label>
-            <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
-            <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
-          </FormControl>
-        </Grid>
+          <Grid item>
+            <FormControl>
+              <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
+                Your Name
+                <Input
+                  type="text"
+                  style={{ display: "block", fontSize: "1.2rem" }}
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                />
+              </label>
+              <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
+                Your Email
+                <Input
+                  type="email"
+                  id="email"
+                  style={{ display: "block", fontSize: "1.2rem" }}
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                />
+              </label>
+              <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
+                Subject
+                <Input
+                  type="subject"
+                  id="email"
+                  style={{ display: "block", fontSize: "1.2rem" }}
+                  name="Subject"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter subject"
+                />
+              </label>
+              <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
+                Your Message
+                <TextField
+                  id="message"
+                  name="message"
+                  rows={10}
+                  style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Enter your message"
+                />
+              </label>
+              <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
+              <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
+            </FormControl>
+          </Grid>
         </form>
       </Grid>
-      
+
     </Box>
   );
 }
