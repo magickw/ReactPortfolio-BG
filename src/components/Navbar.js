@@ -33,6 +33,11 @@ const links = [
         to: '/resume',
         active: 'resume'
     },
+    {
+        name: 'Contact',
+        to: '/contact',
+        active: 'contact'
+    },
 ]
 
 export default function Navbar({darkMode, handleClick}) {
