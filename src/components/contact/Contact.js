@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, FormControl, Input, TextField, Button } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from 'react-reveal/Zoom';
 
@@ -83,10 +83,10 @@ export default function Contact() {
           pr={10}
           pl={10}
           pt={5}>
-          <form ref={formRef} onSubmit={handleSubmit}>
+          <FormControl ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Name
-              <input
+              <Input
                 type="text"
                 style={{ display: "block", fontSize: "1.2rem" }}
                 py={5}
@@ -100,7 +100,7 @@ export default function Contact() {
             </label>
             <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Email
-              <input
+              <Input
                 type="email"
                 id="email"
                 style={{ display: "block", fontSize: "1.2rem" }}
@@ -114,7 +114,7 @@ export default function Contact() {
             </label>
             <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Message
-              <textarea
+              <TextField
                 rows={5}
                 id="message"
                 name="message"
@@ -124,8 +124,8 @@ export default function Contact() {
                 placeholder="Enter your message"
               />
             </label>
-            <button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</button>
-          </form>
+            <Button type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
+          </FormControl>
         </Grid>
       </Grid>
     </Box>
