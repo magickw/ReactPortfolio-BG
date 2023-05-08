@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import Stack from '@mui/joy/Stack';
 
 
-function PortfolioBlock(props) {
+export default function PortfolioBlock(props) {
    const { image, description, techStacks, live, source, title } = props;
    const [isHover, setIsHover] = React.useState(false);
    return (
@@ -55,4 +55,3 @@ function PortfolioBlock(props) {
    );
 }
 
-export default PortfolioBlock;

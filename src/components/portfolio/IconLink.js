@@ -1,6 +1,6 @@
 import React from 'react';
 
-function IconLink(props) {
+export default function IconLink(props) {
    const {link, title, icon} = props;
    return (
       <a href={link} target={"_blank"} rel="noopener noreferrer">
@@ -8,5 +8,3 @@ function IconLink(props) {
       </a>
    );
 }
-
-export default IconLink;

@@ -56,7 +56,7 @@ export default function Resume() {
         {/* <Document file={MyResume} >
           <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
         </Document> */}
-        <embed src={`${MyResume}#page=1`} justifyContent="center" type="application/pdf" width="60%" height="1000px"></embed>
+        <embed src={`${MyResume}#page=1`} justifyContent="center" type="application/pdf" width="65%" height="1000px"></embed>
       </Box>
 
       <Box display="flex" justifyContent="center" mb={2}>

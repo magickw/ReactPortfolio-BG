@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactCountryFlag from 'react-country-flag';
 
-const VisitorLocation = () => {
+export default function VisitorLocation () {
   const [visitorLocation, setVisitorLocation] = useState(localStorage.getItem('visitorLocation'));
 
   useEffect(() => {
@@ -21,7 +21,5 @@ const VisitorLocation = () => {
     </div>
   );
 };
-
-export default VisitorLocation;
 
 

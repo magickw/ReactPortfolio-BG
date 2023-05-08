@@ -5,7 +5,7 @@ import {Box} from "@mui/material";
 
 const iconClass = "fa fa-circle";
 
-function Terminal(props) {
+export default function Terminal(props) {
    const {text} = props;
 
    return (
@@ -24,5 +24,3 @@ function Terminal(props) {
       </Box>
    );
 }
-
-export default Terminal;

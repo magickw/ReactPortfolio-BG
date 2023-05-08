@@ -67,15 +67,30 @@ export default function Contact() {
           </h1>
         </Zoom>
       </Box>
-      <Grid container flexDirection="column" justifyContent="center">
-        <h1 style={{ fontSize: '2rem' }}>Get in Touch</h1>
-        <Grid item xs={12} md={6}>
+      <Grid container
+        flexDirection="column"
+        justifyContent="center"
+        xs={12}
+        md={6}
+        pr={10}
+        pl={15}
+        pt={5}
+      >
+        <h1 justifyContent="center"style={{ fontSize: '2rem' }}>Get in Touch</h1>
+        <Grid item
+          xs={12}
+          md={6}
+          pr={10}
+          pl={10}
+          pt={5}>
           <form ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
               Your Name
               <input
                 type="text"
                 style={{ display: "block", fontSize: "1.2rem" }}
+                py={5}
+                px={7}
                 id="name"
                 name="from_name"
                 value={form.name}
@@ -89,6 +104,8 @@ export default function Contact() {
                 type="email"
                 id="email"
                 style={{ display: "block", fontSize: "1.2rem" }}
+                py={5}
+                px={7}
                 name="from_email"
                 value={form.email}
                 onChange={handleChange}
