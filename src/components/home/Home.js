@@ -7,6 +7,7 @@ import me from '../../assets/self.png';
 import EmojiBullet from './EmojiBullet';
 import SocialIcon from './SocialIcon';
 import Type from './Type';
+import Zoom from 'react-reveal/Zoom';
 
 export default function Home() {
   return (
@@ -18,19 +19,21 @@ export default function Home() {
       justifyContent="center"
       minHeight="calc(100vh - 175px)"
     >
-      <Box
-        className={classNames(Style.avatar, Style.shadowed)}
-        alt="image of developer"
-        style={{ background: info.gradient }}
-        component="img"
-        src={me}
-        width={{ xs: '35vh', md: '40vh' }}
-        height={{ xs: '35vh', md: '40vh' }}
-        borderRadius="50%"
-        p="0.75rem"
-        mb={{ xs: '1rem', sm: 0 }}
-        mr={{ xs: 0, md: '2rem' }}
-      />
+      <Zoom top>
+        <Box
+          className={classNames(Style.avatar, Style.shadowed)}
+          alt="image of developer"
+          style={{ background: info.gradient }}
+          component="img"
+          src={me}
+          width={{ xs: '35vh', md: '40vh' }}
+          height={{ xs: '35vh', md: '40vh' }}
+          borderRadius="50%"
+          p="0.75rem"
+          mb={{ xs: '1rem', sm: 0 }}
+          mr={{ xs: 0, md: '2rem' }}
+        />
+      </Zoom>
       <Box>
         <h1>
           Hi, I'm{' '}
