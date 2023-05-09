@@ -15,7 +15,7 @@ import PacmanLoader from 'react-spinners/PacmanLoader';
 function Footer() {
   const today = new Date();
   const currentYear = today.getFullYear();
-  const currentDate = today.toLocaleDateString();
+  const currentDate = today.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   const currentTime = today.toLocaleTimeString();
 
   return (
