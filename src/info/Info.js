@@ -96,7 +96,7 @@ export const info = {
         },
         {
             title: "Note Taker",
-            live: "https://notetaker-guo.herokuapp.com/",
+            live: "https://note-taker-gd3e35eh5-magickw.vercel.app/",
             description: "This application allows you to write notes, save notes and deletes that are being stored in a db.json file.",
             techStacks: ["Javascript", "Express.js", "Node.js"],
             source: "https://github.com/magickw/NoteTaker",
