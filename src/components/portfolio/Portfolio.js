@@ -23,9 +23,9 @@ export default function Portfolio() {
                     </h1>
                 </Zoom>
             </Box>
-            <Grid container display={'flex'} justifyContent={'center'}>
+            <Grid container sx={{ gap: 6 }} justifyContent="center">
                 {info.portfolio.map((project, index) => (
-                    <Grid item xs={12} md={6} key={index}>
+                    <Grid item xs={8} md={6} lg={4} key={index}>
                         <PortfolioBlock image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />
                     </Grid>
                 ))}

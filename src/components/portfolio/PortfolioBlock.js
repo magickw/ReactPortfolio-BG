@@ -13,9 +13,6 @@ export default function PortfolioBlock(props) {
          flexDirection={'column'}
          justifyContent={'center'}
          alignItems={'center'}
-         pr={15}
-         pl={15}
-         pt={5}
          onMouseEnter={() => setIsHover(true)}
          onMouseLeave={() => setIsHover(false)}
          style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)'}}
@@ -54,4 +51,5 @@ export default function PortfolioBlock(props) {
       </Box>
    );
 }
+
 
