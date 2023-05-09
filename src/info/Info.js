@@ -102,6 +102,15 @@ export const info = {
             source: "https://github.com/magickw/NoteTaker",
             image: notetaker
         },
+
+        {
+            title: "Tech Blog",
+            live: "https://guotechblog.herokuapp.com/",
+            description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
+            techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
+            source: "https://github.com/magickw/MVCTechBlog",
+            image: techblog
+        },
        {
             title: "AstroDash",
             live: "https://magickw.github.io/Astronomy-Dashboard", 
@@ -119,14 +128,6 @@ export const info = {
             image: CodeQuiz
         },
         {
-            title: "Weather Dashboard",
-            live: "https://magickw.github.io/WeatherDashboard",
-            description: "It's a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
-            techStacks: ["Javascript", "HTML", "CSS", "MomentJS", "Bootstrap"],
-            source: "https://github.com/magickw/WeatherDashboard",
-            image: WeatherDashboard
-        },
-        {
             title: "Work Day Scheduler",
             live: "https://magickw.github.io/Work-Day-Scheduler/",
             description: "This simple calendar application that allows a user to save and delete events for each hour of the day.",
@@ -134,14 +135,13 @@ export const info = {
             source: "https://github.com/magickw/Work-Day-Scheduler",
             image: scheduler
         },
-
         {
-            title: "Tech Blog",
-            live: "https://guotechblog.herokuapp.com/",
-            description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
-            techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
-            source: "https://github.com/magickw/MVCTechBlog",
-            image: techblog
+            title: "Weather Dashboard",
+            live: "https://magickw.github.io/WeatherDashboard",
+            description: "It's a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
+            techStacks: ["Javascript", "HTML", "CSS", "MomentJS", "Bootstrap"],
+            source: "https://github.com/magickw/WeatherDashboard",
+            image: WeatherDashboard
         }
     ]
 }

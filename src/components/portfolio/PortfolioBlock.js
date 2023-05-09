@@ -31,7 +31,7 @@ export default function PortfolioBlock(props) {
             direction="row"
             spacing={5}
          >
-            <ul style={{ margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap' }}>
+            <ul style={{ margin: 1, padding: 1, display: 'flex', flexWrap: 'wrap' }}>
                {techStacks.map((techStack) => (
                   <li key={techStack} style={{
                      border: '1px solid green', borderRadius: '3px', padding: '1px', marginRight: '10px'
