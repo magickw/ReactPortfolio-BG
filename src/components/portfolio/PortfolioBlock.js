@@ -6,16 +6,16 @@ import Stack from '@mui/joy/Stack';
 
 export default function PortfolioBlock(props) {
    const { image, description, techStacks, live, source, title } = props;
-   const [isHover, setIsHover] = React.useState(false);
+   // const [isHover, setIsHover] = React.useState(false);
    return (
       <Box
          display={'flex'}
          flexDirection={'column'}
          justifyContent={'center'}
          alignItems={'center'}
-         onMouseEnter={() => setIsHover(true)}
-         onMouseLeave={() => setIsHover(false)}
-         style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)'}}
+         // onMouseEnter={() => setIsHover(true)}
+         // onMouseLeave={() => setIsHover(false)}
+         // style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)'}}
          transition="transform 0.3s ease-in-out"
       >
          <Box component={'img'} src={image} alt={'projects'} />
@@ -29,7 +29,7 @@ export default function PortfolioBlock(props) {
                fontSize: '1rem'
             }}
             direction="row"
-            spacing={2}
+            spacing={5}
          >
             <ul style={{ margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap' }}>
                {techStacks.map((techStack) => (

@@ -24,8 +24,8 @@ function Footer() {
       display='flex'
       flexDirection='column'
       alignItems='center'
-      px={{ xs: 2, sm: 3 }}
-      py={{ xs: 2, sm: 3 }}
+      px={{ xs: 2, sm: 5 }}
+      py={{ xs: 2, sm: 5 }}
       sx={{ opacity: 0.7, fontSize: '0.9rem' }}
       width="100%"
       >
