@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 
-import { Box, Grid, FormControl, Input, TextField, Button } from "@mui/material";
+import { Box, Grid, FormControl, TextField, Button } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from 'react-reveal/Zoom';
 
@@ -88,16 +88,17 @@ export default function Contact() {
       >
         <h1 justifyContent="center" style={{ fontSize: '2rem' }}>Get in Touch</h1>
         <h1 justifyContent="center" style={{ fontSize: '1rem' }}>Ask me something about translation and web development.</h1>
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit} >
           <Grid item>
-            <FormControl>
+            <FormControl >
               <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Name
-                <Input
+                <TextField
                   type="text"
                   style={{ display: "block", fontSize: "1.2rem" }}
                   id="name"
                   name="name"
+                  variant="outlined"
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
@@ -105,9 +106,10 @@ export default function Contact() {
               </label>
               <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Email
-                <Input
+                <TextField
                   type="email"
                   id="email"
+                  variant="outlined"
                   style={{ display: "block", fontSize: "1.2rem" }}
                   name="email"
                   value={form.email}
@@ -115,24 +117,26 @@ export default function Contact() {
                   placeholder="Enter your email"
                 />
               </label>
-              <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
+              {/* <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
                 Subject
                 <Input
                   type="subject"
                   id="email"
+                  variant="outlined"
                   style={{ display: "block", fontSize: "1.2rem" }}
                   name="Subject"
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Enter subject"
                 />
-              </label>
+              </label> */}
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
                 <TextField
                   id="message"
                   name="message"
-                  rows={10}
+                  multiline
+                  rows={4}
                   style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
                   value={form.message}
                   onChange={handleChange}

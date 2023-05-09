@@ -12,7 +12,11 @@ import Contact from './contact/Contact';
 import Style from './BaseLayout.module.scss';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 
-function Footer({ currentYear }) {
+function Footer() {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentDate = today.toLocaleDateString();
+  const currentTime = today.toLocaleTimeString();
 
   return (
     <Box
@@ -26,7 +30,7 @@ function Footer({ currentYear }) {
       width="100%"
       >
       <VisitorLocation />
-      <p>Welcome to my portfolio website. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a> &copy; {currentYear}</p>
+      <p>{currentDate} {currentTime}. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a> &copy; {currentYear}</p>
       <p>Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
     </Box>
   );
@@ -36,8 +40,7 @@ export default function BaseLayout() {
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const today = new Date();
-  const currentYear = today.getFullYear();
+
 
   const handleToggleDarkMode = () => {
     const oppositeOfCurrentDarkMode = !darkMode;
@@ -55,7 +58,7 @@ export default function BaseLayout() {
     }
 
     // Simulate loading
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => setLoading(false), 1200);
   }, []);
 
   return (
@@ -76,7 +79,7 @@ export default function BaseLayout() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         )}
-        <Footer currentYear={currentYear} />
+        <Footer/>
       </Grid>
     </Box>
   );
