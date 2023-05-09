@@ -87,7 +87,7 @@ export default function Contact() {
         }}
       >
         <h1 justifyContent="center" style={{ fontSize: '2rem' }}>Get in Touch</h1>
-        <h1 justifyContent="center" style={{ fontSize: '1rem' }}>Ask me something about translation and web development.</h1>
+        <h1 justifyContent="center" style={{ fontSize: '1rem' }}>Ask me something about translation and full-stack development.</h1>
         <form ref={formRef} onSubmit={handleSubmit} >
           <Grid item>
             <FormControl >
@@ -117,19 +117,19 @@ export default function Contact() {
                   placeholder="Enter your email"
                 />
               </label>
-              {/* <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
+              <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
                 Subject
-                <Input
+                <TextField
                   type="subject"
-                  id="email"
+                  id="subject"
                   variant="outlined"
                   style={{ display: "block", fontSize: "1.2rem" }}
-                  name="Subject"
-                  value={form.email}
+                  name="subject"
+                  value={form.subject}
                   onChange={handleChange}
                   placeholder="Enter subject"
                 />
-              </label> */}
+              </label>
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
                 <TextField
