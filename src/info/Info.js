@@ -94,6 +94,14 @@ export const info = {
             source: "https://github.com/magickw/TextEditor",
             image: TextEditor
         },
+        {
+            title: "Note Taker",
+            live: "https://notetaker-guo.herokuapp.com/",
+            description: "This application allows you to write notes, save notes and deletes that are being stored in a db.json file.",
+            techStacks: ["Javascript", "Express.js", "Node.js"],
+            source: "https://github.com/magickw/NoteTaker",
+            image: notetaker
+        },
        {
             title: "AstroDash",
             live: "https://magickw.github.io/Astronomy-Dashboard", 
@@ -134,14 +142,6 @@ export const info = {
             techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
             source: "https://github.com/magickw/MVCTechBlog",
             image: techblog
-        },
-        {
-            title: "Note Taker",
-            live: "https://notetaker-guo.herokuapp.com/",
-            description: "This application allows you to write notes, save notes and deletes that are being stored in a db.json file.",
-            techStacks: ["Javascript", "Express.js", "Node.js"],
-            source: "https://github.com/magickw/NoteTaker",
-            image: notetaker
-        },
+        }
     ]
 }
