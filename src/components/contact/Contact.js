@@ -70,19 +70,20 @@ export default function Contact() {
           </h1>
         </Zoom>
       </Box>
-      <Grid container
+      <Grid container 
 
-        flexDirection="column"
+        flexDirection="row"
         justifyContent="center"
         xs={12}
         md={6}
         sx={{
+          width: "75%",
           padding: '40px',
           '@media (min-width: 960px)': {
-            paddingLeft: '250px',
-            paddingRight: '250px',
+            paddingLeft: '100px',
+            paddingRight: '100px',
             paddingTop: '20px',
-            paddingBottom: '20px',
+            marginBottom: '20px',
           },
         }}
       >
@@ -102,6 +103,11 @@ export default function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
+                  sx={{
+                    "&::placeholder": {
+                      color: "yellow",
+                    },
+                  }}
                 />
               </label>
               <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
@@ -115,6 +121,11 @@ export default function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
+                  sx={{
+                    "&::placeholder": {
+                      color: "yellow",
+                    },
+                  }}
                 />
               </label>
               <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
@@ -128,6 +139,11 @@ export default function Contact() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Enter subject"
+                  sx={{
+                    "&::placeholder": {
+                      color: "yellow",
+                    },
+                  }}
                 />
               </label>
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
@@ -141,6 +157,11 @@ export default function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Enter your message"
+                  sx={{
+                    "&::placeholder": {
+                      color: "yellow",
+                    },
+                  }}
                 />
               </label>
               <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>

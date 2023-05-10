@@ -31,7 +31,7 @@ function Footer() {
       >
       <VisitorLocation />
       <p>{currentDate} {currentTime}. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a> &copy; {currentYear}</p>
-      <p>Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
+      <p>Accept Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
     </Box>
   );
 }
@@ -39,7 +39,6 @@ function Footer() {
 export default function BaseLayout() {
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
-
 
 
   const handleToggleDarkMode = () => {
@@ -67,7 +66,7 @@ export default function BaseLayout() {
         <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
         {loading ? (
           <Box display="flex" justifyContent="center" alignItems="center" height="100%">
-            <PacmanLoader color="#36d7b7" size={25} />
+            <PacmanLoader color="#36d7b7" size={40} />
           </Box>
         ) : (
           <Routes>
