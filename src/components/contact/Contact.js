@@ -13,11 +13,6 @@ import {
 import { info } from "../../info/Info";
 import Zoom from "react-reveal/Zoom";
 
-const options = [
-  { value: 'en', label: 'English' },
-  { value: 'zh-CN', label: 'Chinese (Simplified)' },
-  { value: 'zh-TW', label: 'Chinese (Traditional)' },
-];
 
 export default function Contact() {
   const formRef = useRef();
@@ -27,18 +22,23 @@ export default function Contact() {
     subject: "",
     message: "",
     file: null,
+    selectedSourceLang: null,
+    selectedTargetLang: null,
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [selectedSourceLang, setSelectedSourceLang] = useState(null);
-  const [selectedTargetLang, setSelectedTargetLang] = useState(null);
-  const handleSourceLangChange = (selectedOption) => {
-    setSelectedSourceLang(selectedOption);
-  };
 
-  const handleTargetLangChange = (selectedOption) => {
-    setSelectedTargetLang(selectedOption);
-  };
+  const sourceLangOptions = [
+    { value: 'en', label: 'English' },
+    { value: 'zh-CN', label: 'Chinese (Simplified)' },
+    { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  ];
+
+  const targetLangOptions = [
+    { value: 'en', label: 'English' },
+    { value: 'zh-CN', label: 'Chinese (Simplified)' },
+    { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +49,13 @@ export default function Contact() {
     setForm({ ...form, file: e.target.files[0] });
   };
 
-  
+  const handleSourceLangChange = (selectedOption) => {
+    setForm({ ...form, selectedSourceLang: selectedOption });
+  };
+
+  const handleTargetLangChange = (selectedOption) => {
+    setForm({ ...form, selectedTargetLang: selectedOption });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,6 +69,8 @@ export default function Contact() {
     if (form.file) {
       formData.append("file", form.file);
     }
+    formData.append("selectedSourceLang", form.selectedSourceLang.value);
+    formData.append("selectedTargetLang", form.selectedTargetLang.value);
 
 
     emailjs
@@ -85,6 +93,8 @@ export default function Contact() {
             subject: "",
             message: "",
             file: null,
+            selectedSourceLang: null,
+            selectedTargetLang: null
           });
         },
         (error) => {
@@ -98,7 +108,7 @@ export default function Contact() {
 
   return (
     <Box>
-      <Box
+      <Box 
         display={"flex"}
         flexDirection={"row"}
         justifyContent={"center"}
@@ -201,7 +211,7 @@ export default function Contact() {
                 />
               </label>
               <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>
-                Choose a file to upload. For translation inquiry only.
+                Choose a file to upload, for translation inquiry only.
                 <Input
                   id="file"
                   type="file"
@@ -209,21 +219,30 @@ export default function Contact() {
                   onChange={handleFileChange}
                   style={{ display: "block", fontSize: "1.2rem" }}
                 />
-              </label>
-                <label htmlFor="sourceLangSelect">Source Language:</label>
-                <Select
-                  id="sourceLangSelect"
-                  value={selectedSourceLang}
-                  onChange={handleSourceLangChange}
-                  options={options}
-                />
-                <label htmlFor="targetLangSelect">Target Language:</label>
-                <Select
-                  id="targetLangSelect"
-                  value={selectedTargetLang}
-                  onChange={handleTargetLangChange}
-                  options={options}
-                />
+                </label>
+
+            <label htmlFor="sourceLang" style={{ display: "block", fontSize: "1.2rem" }}>
+              Source Language
+              <Select
+                id="sourceLang"
+                options={sourceLangOptions}
+                value={form.selectedSourceLang}
+                onChange={handleSourceLangChange}
+                placeholder="Select source language"
+              />
+            </label>
+
+            <label htmlFor="targetLang" style={{ display: "block", fontSize: "1.2rem" }}>
+              Target Language
+              <Select
+                id="targetLang"
+                options={targetLangOptions}
+                value={form.selectedTargetLang}
+                onChange={handleTargetLangChange}
+                placeholder="Select target language"
+              />
+            </label>
+
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
                 <TextField
@@ -235,11 +254,6 @@ export default function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Enter your message"
-                  sx={{
-                    "&::placeholder": {
-                      color: "yellow",
-                    },
-                  }}
                 />
               </label>
               <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
