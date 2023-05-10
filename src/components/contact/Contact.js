@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
-import Select from 'react-select';
+// import Select from 'react-select';
 
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   FormControl,
   TextField,
   Button,
-  Input,
+  // Input,
 } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from "react-reveal/Zoom";
@@ -21,41 +21,41 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
-    file: null,
-    selectedSourceLang: null,
-    selectedTargetLang: null,
+    // file: null,
+    // selectedSourceLang: null,
+    // selectedTargetLang: null,
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const sourceLangOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'zh-CN', label: 'Chinese (Simplified)' },
-    { value: 'zh-TW', label: 'Chinese (Traditional)' },
-  ];
+  // const sourceLangOptions = [
+  //   { value: 'en', label: 'English' },
+  //   { value: 'zh-CN', label: 'Chinese (Simplified)' },
+  //   { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  // ];
 
-  const targetLangOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'zh-CN', label: 'Chinese (Simplified)' },
-    { value: 'zh-TW', label: 'Chinese (Traditional)' },
-  ];
+  // const targetLangOptions = [
+  //   { value: 'en', label: 'English' },
+  //   { value: 'zh-CN', label: 'Chinese (Simplified)' },
+  //   { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  // ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setForm({ ...form, file: e.target.files[0] });
-  };
+  // const handleFileChange = (e) => {
+  //   setForm({ ...form, file: e.target.files[0] });
+  // };
 
-  const handleSourceLangChange = (selectedOption) => {
-    setForm({ ...form, selectedSourceLang: selectedOption });
-  };
+  // const handleSourceLangChange = (selectedOption) => {
+  //   setForm({ ...form, selectedSourceLang: selectedOption });
+  // };
 
-  const handleTargetLangChange = (selectedOption) => {
-    setForm({ ...form, selectedTargetLang: selectedOption });
-  };
+  // const handleTargetLangChange = (selectedOption) => {
+  //   setForm({ ...form, selectedTargetLang: selectedOption });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,11 +66,11 @@ export default function Contact() {
     formData.append("email", form.email);
     formData.append("subject", form.subject);
     formData.append("message", form.message);
-    if (form.file) {
-      formData.append("file", form.file);
-    }
-    formData.append("selectedSourceLang", form.selectedSourceLang.value);
-    formData.append("selectedTargetLang", form.selectedTargetLang.value);
+    // if (form.file) {
+    //   formData.append("file", form.file);
+    // }
+    // formData.append("selectedSourceLang", form.selectedSourceLang.value);
+    // formData.append("selectedTargetLang", form.selectedTargetLang.value);
 
 
     emailjs
@@ -210,7 +210,7 @@ export default function Contact() {
                   }}
                 />
               </label>
-              <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>
+              {/* <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>
                 Choose a file to upload, for translation inquiry only.
                 <Input
                   id="file"
@@ -241,7 +241,7 @@ export default function Contact() {
                 onChange={handleTargetLangChange}
                 placeholder="Select target language"
               />
-            </label>
+            </label> */}
 
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
