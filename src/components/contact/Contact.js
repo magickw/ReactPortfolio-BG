@@ -1,9 +1,16 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 
-import { Box, Grid, FormControl, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Grid,
+  FormControl,
+  TextField,
+  Button,
+  Input,
+} from "@mui/material";
 import { info } from "../../info/Info";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 
 export default function Contact() {
   const formRef = useRef();
@@ -12,6 +19,7 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
+    file: null,
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -21,9 +29,22 @@ export default function Contact() {
     setForm({ ...form, [name]: value });
   };
 
+  const handleFileChange = (e) => {
+    setForm({ ...form, file: e.target.files[0] });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("subject", form.subject);
+    formData.append("message", form.message);
+    if (form.file) {
+      formData.append("file", form.file);
+    }
 
     emailjs
       .sendForm(
@@ -35,13 +56,16 @@ export default function Contact() {
       .then(
         () => {
           setLoading(false);
-          setMessage("<div>Thank you. I will get back to you as soon as possible.</div>");
+          setMessage(
+            "<div>Thank you. I will get back to you as soon as possible.</div>"
+          );
 
           setForm({
             name: "",
             email: "",
             subject: "",
             message: "",
+            file: null,
           });
         },
         (error) => {
@@ -55,14 +79,19 @@ export default function Contact() {
 
   return (
     <Box>
-      <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
+      <Box
+        display={"flex"}
+        flexDirection={"row"}
+        justifyContent={"center"}
+        fontSize={"1.5rem"}
+      >
         <Zoom top>
           <h1>
             <span
               style={{
                 background: info.gradient,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
               Contact Me
@@ -70,28 +99,34 @@ export default function Contact() {
           </h1>
         </Zoom>
       </Box>
-      <Grid container 
-
-        flexDirection="row"
+      <Grid
+        container
+        flexDirection="column"
         justifyContent="center"
         xs={12}
         md={6}
         sx={{
-          width: "75%",
-          padding: '40px',
-          '@media (min-width: 960px)': {
-            paddingLeft: '100px',
-            paddingRight: '100px',
-            paddingTop: '20px',
-            marginBottom: '20px',
+          padding: "40px",
+          "@media (min-width: 960px)": {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+            paddingTop: "20px",
+            paddingBottom: "20px",
           },
         }}
       >
-        <h1 justifyContent="center" style={{ fontSize: '2rem' }}>Get in Touch</h1>
-        <h1 justifyContent="center" style={{ fontSize: '1rem' }}>Ask me something about translation and full-stack development.</h1>
-        <form ref={formRef} onSubmit={handleSubmit} >
+        <h1 justifyContent="center" style={{ fontSize: "2rem" }}>
+          Get in Touch
+        </h1>
+        <h1
+          justifyContent="center"
+          style={{ fontSize: "1rem", marginBottom: "20px" }}
+        >
+          Ask me something about translation and full-stack development.
+        </h1>
+        <form ref={formRef} onSubmit={handleSubmit}>
           <Grid item>
-            <FormControl >
+            <FormControl>
               <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Name
                 <TextField
@@ -144,6 +179,16 @@ export default function Contact() {
                       color: "yellow",
                     },
                   }}
+                />
+              </label>
+              <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>
+                Choose a file to upload. For translation inquiry only.
+                <Input
+                  id="file"
+                  type="file"
+                  name="file"
+                  onChange={handleFileChange}
+                  style={{ display: "block", fontSize: "1.2rem" }}
                 />
               </label>
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
