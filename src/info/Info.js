@@ -84,6 +84,23 @@ export const info = {
 
 
     ],
+    services: [
+        
+        {
+            label: 'medical translation, $0.12/word, $35/hour for editing',
+            emoji: '🏥'
+        },
+        {
+            label: 'web development',
+            emoji: '🌐'
+        },
+        {
+            label: 'full-stack development',
+            emoji: '👨‍💻'
+        }
+
+
+    ],
     portfolio: [ 
         
         {

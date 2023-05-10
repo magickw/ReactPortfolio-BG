@@ -63,6 +63,22 @@ export default function About() {
             </Slide>
         </>;
     }
+    function servicesText() {
+        return <>
+            <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cd
+                services</p>
+            <p><span style={{ color: info.baseColor }}>services <span
+                className={Style.green}>(main)</span> $</span> ls</p>
+
+            <Slide left>
+                <ul>
+                    {info.services.map((service, index) => (
+                        <li key={index}><Box component={'span'} mr={'1rem'}>{service.emoji}</Box>{service.label}</li>
+                    ))}
+                </ul>
+            </Slide>
+        </>;
+    }
 
     return (
         
@@ -83,6 +99,7 @@ export default function About() {
                 </Zoom>
             </Box>
             <Terminal text={aboutMeText()} />
+            <Terminal text={servicesText()} />
             <Terminal text={skillsText()} />
             <Terminal text={miscText()} />
         </Box>
