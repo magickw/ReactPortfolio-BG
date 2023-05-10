@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import Select from 'react-select';
 
 import {
   Box,
@@ -12,6 +13,12 @@ import {
 import { info } from "../../info/Info";
 import Zoom from "react-reveal/Zoom";
 
+const options = [
+  { value: 'en', label: 'English' },
+  { value: 'zh-CN', label: 'Chinese (Simplified)' },
+  { value: 'zh-TW', label: 'Chinese (Traditional)' },
+];
+
 export default function Contact() {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -23,6 +30,15 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [selectedSourceLang, setSelectedSourceLang] = useState(null);
+  const [selectedTargetLang, setSelectedTargetLang] = useState(null);
+  const handleSourceLangChange = (selectedOption) => {
+    setSelectedSourceLang(selectedOption);
+  };
+
+  const handleTargetLangChange = (selectedOption) => {
+    setSelectedTargetLang(selectedOption);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +48,8 @@ export default function Contact() {
   const handleFileChange = (e) => {
     setForm({ ...form, file: e.target.files[0] });
   };
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,6 +63,7 @@ export default function Contact() {
     if (form.file) {
       formData.append("file", form.file);
     }
+
 
     emailjs
       .sendForm(
@@ -191,6 +210,20 @@ export default function Contact() {
                   style={{ display: "block", fontSize: "1.2rem" }}
                 />
               </label>
+                <label htmlFor="sourceLangSelect">Source Language:</label>
+                <Select
+                  id="sourceLangSelect"
+                  value={selectedSourceLang}
+                  onChange={handleSourceLangChange}
+                  options={options}
+                />
+                <label htmlFor="targetLangSelect">Target Language:</label>
+                <Select
+                  id="targetLangSelect"
+                  value={selectedTargetLang}
+                  onChange={handleTargetLangChange}
+                  options={options}
+                />
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
                 <TextField
