@@ -154,7 +154,7 @@ export default function Contact() {
           Ask me something about translation and full-stack development.
         </h1>
         <form ref={formRef} onSubmit={handleSubmit}>
-          <Grid item>
+          <Grid item >
             <FormControl>
               <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Name

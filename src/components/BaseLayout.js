@@ -66,7 +66,7 @@ export default function BaseLayout() {
         <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
         {loading ? (
           <Box display="flex" justifyContent="center" alignItems="center" height="100%">
-            <PacmanLoader color="#36d7b7" size={40} />
+            <PacmanLoader color="#36d7b7" size={35} />
           </Box>
         ) : (
           <Routes>
