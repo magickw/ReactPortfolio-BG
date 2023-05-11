@@ -25,13 +25,13 @@ export default function Portfolio() {
                 </Zoom>
             </Box>
             <Fade delay={1000}>
-            <Grid container sx={{ gap: 6 }} justifyContent="center">
-                {info.portfolio.map((project, index) => (
-                    <Grid item xs={8} md={6} lg={4} key={index}>
-                        <PortfolioBlock image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />
-                    </Grid>
-                ))}
-            </Grid>
+                <Grid container sx={{ gap: 6 }} justifyContent="center">
+                    {info.portfolio.map((project, index) => (
+                        <Grid item xs={8} md={6} lg={4} key={index}>
+                            <PortfolioBlock image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />
+                        </Grid>
+                    ))}
+                </Grid>
             </Fade>
         </Box>
     );
