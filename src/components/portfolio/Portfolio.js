@@ -3,6 +3,7 @@ import PortfolioBlock from "./PortfolioBlock";
 import { Box, Grid } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 
 
 export default function Portfolio() {
@@ -23,6 +24,7 @@ export default function Portfolio() {
                     </h1>
                 </Zoom>
             </Box>
+            <Fade delay={1000}>
             <Grid container sx={{ gap: 6 }} justifyContent="center">
                 {info.portfolio.map((project, index) => (
                     <Grid item xs={8} md={6} lg={4} key={index}>
@@ -30,6 +32,7 @@ export default function Portfolio() {
                     </Grid>
                 ))}
             </Grid>
+            </Fade>
         </Box>
     );
 };
