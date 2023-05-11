@@ -128,17 +128,15 @@ export default function Contact() {
           </h1>
         </Zoom>
       </Box>
-      <Grid
-        container
+      <Grid container
         flexDirection="column"
         justifyContent="center"
-        xs={12}
+
         md={6}
         sx={{
           padding: "40px",
           "@media (min-width: 960px)": {
             paddingLeft: "100px",
-            paddingRight: "100px",
             paddingTop: "20px",
             paddingBottom: "20px",
           },
