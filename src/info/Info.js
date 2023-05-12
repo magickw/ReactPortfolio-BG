@@ -64,7 +64,7 @@ export const info = {
     skills:
         {
             proficientWith: ['javascript', 'react', 'git', 'github', 'nodejs', 'bootstrap', 'html5', 'css3', 'tailwindcss', 'mangodb', 'mySQL', 'vs code', 'Apollo GraphQL', 'Relational Databases', 'Webpack', 'PWA', 'Unit Testing w/ JEST', 'Express.js', 'jQuery', 'API'],
-            exposedTo: ['python', 'react native']
+            learning: ['python', 'react native', 'java']
         }
     ,
     hobbies: [
