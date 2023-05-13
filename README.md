@@ -11,8 +11,8 @@ https://github.com/magickw/ReactPortfolio-BG/assets/78279120/1094bf5d-c04c-45b1-
 
 ## Web Analytics
 
-![Page hits](src/assets/page hits.png)
-![Pagehits details](src/assets/pageview details.png)
+<img src="src/assets/page hits.png">
+<img src="src/assets/pageview details.png">
 
 
 ## how to use
