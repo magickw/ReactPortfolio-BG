@@ -92,9 +92,9 @@ export default function Contact() {
             email: "",
             subject: "",
             message: "",
-            file: null,
-            selectedSourceLang: null,
-            selectedTargetLang: null
+            // file: null,
+            // selectedSourceLang: null,
+            // selectedTargetLang: null
           });
         },
         (error) => {
@@ -247,7 +247,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   multiline
-                  rows={4}
+                  rows={5}
                   style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
                   value={form.message}
                   onChange={handleChange}
