@@ -78,8 +78,8 @@ export default function BaseLayout() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         )}
-        <Footer/>
       </Grid>
+      <Footer/>
     </Box>
   );
 }
