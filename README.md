@@ -7,7 +7,10 @@ Simplified Chinese: 国宝/Traditional Chinese: 國寶 (pronouced: guóbǎo), li
 ## demo
 
 
-https://github.com/magickw/ReactPortfolio-BG/assets/78279120/1094bf5d-c04c-45b1-ae6e-561a1b5f120f
+
+https://github.com/magickw/ReactPortfolio-BG/assets/78279120/50bd909b-9e24-412e-aae9-064240bc689c
+
+
 
 ## Web Analytics
 
