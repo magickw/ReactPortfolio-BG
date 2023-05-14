@@ -28,7 +28,7 @@ function Footer() {
       py={{ xs: 2, sm: 5 }}
       sx={{ opacity: 0.7, fontSize: '0.9rem' }}
       width="100%"
-      >
+    >
       <VisitorLocation />
       <p>{currentDate} {currentTime}. This website was adapted from the template created by <a href='https://paytonpierce.dev'>Payton Pierce</a> &copy; {currentYear}</p>
       <p>Accept Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
@@ -78,8 +78,8 @@ export default function BaseLayout() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         )}
+        <Footer />
       </Grid>
-      <Footer/>
     </Box>
   );
 }
