@@ -13,7 +13,7 @@ export default function Portfolio() {
         setShowAll(!showAll);
     };
     return (
-        <Box>
+        <Box mb={4}>
             <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} fontSize={'1.5rem'}>
                 <Zoom top>
                     <h1>
