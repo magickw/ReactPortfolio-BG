@@ -5,7 +5,7 @@ import { info } from '../../info/Info';
 import Style from './Home.module.scss';
 import me from '../../assets/self.png';
 import EmojiBullet from './EmojiBullet';
-import SocialIcon from './SocialIcon';
+import SocialIcons from './SocialIcons';
 import Type from './Type';
 import Zoom from 'react-reveal/Zoom';
 
@@ -58,7 +58,7 @@ export default function Home() {
         </Box>
         <Box display="flex" gap="1.5rem" justifyContent="left" fontSize={{ xs: '2rem', md: '2.5rem' }}>
           {info.socials.map((social, index) => (
-            <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} />
+            <SocialIcons key={index} link={social.link} icon={social.icon} label={social.label} />
           ))}
         </Box>
       </Box>

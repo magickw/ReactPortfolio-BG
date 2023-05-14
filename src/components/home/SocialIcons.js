@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SocialIcon(props) {
+export default function SocialIcons(props) {
     const {link, icon, label} = props;
     return (
         <a target="_blank" aria-label={label}
@@ -9,5 +9,3 @@ function SocialIcon(props) {
         </a>
     );
 }
-
-export default SocialIcon;

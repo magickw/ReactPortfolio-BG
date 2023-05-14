@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PortfolioBlock from "./PortfolioBlock";
+import ProjectCard from "./ProjectCard";
 import { Box, Grid, Button } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from 'react-reveal/Zoom';
@@ -33,7 +33,7 @@ export default function Portfolio() {
                 <Grid container sx={{ gap: 6 }} justifyContent="center">
                     {info.portfolio.slice(0, showAll ? info.portfolio.length : 4).map((project, index) => (
                         <Grid item xs={8} md={6} lg={4} key={index}>
-                            <PortfolioBlock image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />
+                            <ProjectCard image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />
                         </Grid>
                     ))}
                 </Grid>
