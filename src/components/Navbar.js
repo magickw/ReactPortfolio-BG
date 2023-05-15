@@ -71,14 +71,15 @@ const Weather = () => {
     //   };
     const convertKelvinToCelsius = (kelvin) => {
         return kelvin - 273.15;
-      };
-      
+    };
+
     return (
         <Box display="inline-block" alignItems="center">
             {weatherData ? (
-                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon"/></p>
+                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C 
+                <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" /></p>
             ) : (
-                <p>Loading...</p>
+                <p>Loading weather...</p>
             )}
         </Box>
     );
@@ -90,9 +91,14 @@ export default function Navbar({ darkMode, handleClick }) {
 
     return (
         <Box component={'nav'} width={'100%'}>
-            <Box component={'ul'} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}
+            <Box component={'ul'}
+                display={'flex'}
+                flexWrap={'wrap'}
+                justifyContent={'center'}
+                alignItems={'center'}
                 gap={{ xs: '0.8rem', md: '6rem' }}
-                textTransform={'lowercase'} fontSize={'1rem'}>
+                    // textTransform={'lowercase'}
+                fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>
                         <Link aria-label={'home page'} to={link.to} onClick={() => setActive(link.active)}>

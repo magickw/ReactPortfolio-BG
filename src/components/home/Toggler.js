@@ -10,7 +10,7 @@ export default function Toggler({darkMode, handleClick}) {
             darkMode ?
                <span onClick={handleClick} aria-label="Full Moon" role="img">☀️</span>
                :
-               <span onClick={handleClick} aria-label="New Moon" role="img">🌑</span>
+               <span onClick={handleClick} aria-label="New Moon" role="img">🌙</span>
          }
       </Box>
    )
