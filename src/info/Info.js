@@ -123,7 +123,7 @@ export const info = {
         {
             title: "Tech Blog",
             live: "https://guotechblog.herokuapp.com/",
-            description: "This application is a tech blog which allows the developers to publish blog posts, make comments and create accounts using MVC architectural structure, Handlebars.js, Sequelize.",
+            description: "This application is a tech blog that utilizes the MVC architectural structure, Handlebars.js, and Sequelize. It enables developers to publish blog posts, make comments, and create user accounts.",
             techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
             source: "https://github.com/magickw/MVCTechBlog",
             image: techblog
@@ -131,7 +131,7 @@ export const info = {
        {
             title: "AstroDash",
             live: "https://magickw.github.io/Astronomy-Dashboard", 
-            description: "Astronomy Dashboard uses geolocation functions and weather API to present the weather conditions such as visibility and cloudiness, and moon phases.",
+            description: "The Astronomy Dashboard utilizes geolocation functions and a weather API to display weather conditions such as visibility, cloudiness, and moon phases.",
             techStacks: ["Javascript", "HTML", "CSS", "TailwindCSS", "jQuery", "Datatables"],
             source: "https://github.com/DazedChou/Astronomy-Dashboard", 
             image: AstroDash
@@ -147,7 +147,7 @@ export const info = {
         {
             title: "Work Day Scheduler",
             live: "https://magickw.github.io/Work-Day-Scheduler/",
-            description: "This simple calendar application that allows a user to save and delete events for each hour of the day.",
+            description: "This simple calendar application enables users to save and delete events for each hour of the day.",
             techStacks: ["Javascript", "HTML", "CSS", "MomentJS", "Bootstrap"],
             source: "https://github.com/magickw/Work-Day-Scheduler",
             image: scheduler
@@ -155,7 +155,7 @@ export const info = {
         {
             title: "Weather Dashboard",
             live: "https://magickw.github.io/WeatherDashboard",
-            description: "It's a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
+            description: "The Weather Dashboard is a browser-based application that dynamically updates HTML and CSS to display current weather information.",
             techStacks: ["Javascript", "HTML", "CSS", "MomentJS", "Bootstrap"],
             source: "https://github.com/magickw/WeatherDashboard",
             image: WeatherDashboard

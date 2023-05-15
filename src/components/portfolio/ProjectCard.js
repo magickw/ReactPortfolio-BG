@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import Stack from '@mui/joy/Stack';
 
 
-export default function PortfolioBlock(props) {
+export default function ProjectCard(props) {
    const { image, description, techStacks, live, source, title } = props;
    const [isHover, setIsHover] = React.useState(false);
    return (
@@ -15,7 +15,15 @@ export default function PortfolioBlock(props) {
          alignItems={'center'}
          onMouseEnter={() => setIsHover(true)}
          onMouseLeave={() => setIsHover(false)}
-         style={{ transform: isHover ? 'scale(1.1)' : 'scale(1)'}}
+         style={{
+            transform: isHover ? 'scale(1.1)' : 'scale(1)',
+            backgroundColor: 'lightblue', // Change background color to light blue
+            width: '100%',
+            maxWidth: '500px', // Set width to 500px
+            height: '590px', // Set height to 600px
+            padding: '1rem',
+            borderRadius: '8px',
+         }}
          transition="transform 0.3s ease-in-out"
       >
          <Box component={'img'} src={image} alt={'projects'} />
