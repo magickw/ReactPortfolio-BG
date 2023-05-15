@@ -76,8 +76,8 @@ const Weather = () => {
     return (
         <Box display="inline-block" alignItems="center">
             {weatherData ? (
-                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C 
-                <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" /></p>
+                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C
+                    <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" /></p>
             ) : (
                 <p>Loading weather...</p>
             )}
@@ -89,6 +89,7 @@ export default function Navbar({ darkMode, handleClick }) {
     const location = useLocation()
     const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
 
+
     return (
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'}
@@ -97,13 +98,13 @@ export default function Navbar({ darkMode, handleClick }) {
                 justifyContent={'center'}
                 alignItems={'center'}
                 gap={{ xs: '0.8rem', md: '6rem' }}
-                    // textTransform={'lowercase'}
+                // textTransform={'lowercase'}
                 fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>
                         <Link aria-label={'home page'} to={link.to} onClick={() => setActive(link.active)}>
-                            {link.name && <p style={{ paddingBottom: '0.5rem' }}>{link.name}</p>}
                             {link.image && <img alt={''} src={link.image} style={{ maxWidth: '75px' }} />}
+                            {link.name && <p style={{ paddingBottom: '0.5rem' }}>{link.name}</p>}
                         </Link>
                     </li>
                 ))}

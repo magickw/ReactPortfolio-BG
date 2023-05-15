@@ -106,7 +106,7 @@ export const info = {
         {
             title: "Text Editor",
             live: "https://jate-bfguo.herokuapp.com", 
-            description: "This application takes an existing text editor app and adds functionality for it to work as a PWA and function offline. ",
+            description: "This application enhances an existing text editor app by enabling it to work as a Progressive Web App (PWA) and providing offline functionality.",
             techStacks: ["React", "Node.js", "Express.js", "PWA"],
             source: "https://github.com/magickw/TextEditor",
             image: TextEditor
@@ -114,7 +114,7 @@ export const info = {
         {
             title: "Note Taker",
             live: "https://note-taker-gd3e35eh5-magickw.vercel.app/",
-            description: "This application allows you to write notes, save notes and deletes that are being stored in a db.json file.",
+            description: "This application allows you to write notes, save notes and deletes those are being stored in a db.json file.",
             techStacks: ["Javascript", "Express.js", "Node.js"],
             source: "https://github.com/magickw/NoteTaker",
             image: notetaker
