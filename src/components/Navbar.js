@@ -74,11 +74,9 @@ const Weather = () => {
       };
       
     return (
-        <Box display="flex" alignItems="center">
+        <Box display="inline-block" alignItems="center">
             {weatherData ? (
-                <p>
-                    <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" /> {Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C
-                </p>
+                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon"/></p>
             ) : (
                 <p>Loading...</p>
             )}
