@@ -49,10 +49,9 @@ const Weather = () => {
                 // Fetch user's current position using Geolocation API
                 navigator.geolocation.getCurrentPosition(async (position) => {
                     const { latitude, longitude } = position.coords;
-                    // const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // Access the API key from environment variable
+                    const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // Access the API key from environment variable
                     const response = await fetch(
-                        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=723b345acdd52204dfb9a13e95119b61`
-                        // `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+                        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
                     );
                     console.log(response);
                     const data = await response.json();
