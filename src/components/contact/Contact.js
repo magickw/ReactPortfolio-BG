@@ -72,6 +72,13 @@ export default function Contact() {
     // formData.append("selectedSourceLang", form.selectedSourceLang.value);
     // formData.append("selectedTargetLang", form.selectedTargetLang.value);
 
+    // Email validation check
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!emailRegex.test(form.email)) {
+    //   setLoading(false);
+    //   setMessage("<div>Please enter a valid email address.</div>");
+    //   return;
+    // }
 
     emailjs
       .sendForm(
@@ -108,7 +115,7 @@ export default function Contact() {
 
   return (
     <Box>
-      <Box 
+      <Box
         display={"flex"}
         flexDirection={"row"}
         justifyContent={"center"}
@@ -131,7 +138,6 @@ export default function Contact() {
       <Grid container
         flexDirection="column"
         justifyContent="center"
-
         md={6}
         sx={{
           padding: "40px",
@@ -165,11 +171,6 @@ export default function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
-                  sx={{
-                    "&::placeholder": {
-                      color: "yellow",
-                    },
-                  }}
                 />
               </label>
               <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
@@ -183,11 +184,6 @@ export default function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  sx={{
-                    "&::placeholder": {
-                      color: "yellow",
-                    },
-                  }}
                 />
               </label>
               <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
@@ -201,11 +197,6 @@ export default function Contact() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Enter subject"
-                  sx={{
-                    "&::placeholder": {
-                      color: "yellow",
-                    },
-                  }}
                 />
               </label>
               {/* <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>

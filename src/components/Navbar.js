@@ -49,10 +49,10 @@ const Weather = () => {
                 // Fetch user's current position using Geolocation API
                 navigator.geolocation.getCurrentPosition(async (position) => {
                     const { latitude, longitude } = position.coords;
-                    // const apiKey = process.env.WEATHER_API_KEY; // Access the API key from environment variable
+                    // const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // Access the API key from environment variable
                     const response = await fetch(
                         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=723b345acdd52204dfb9a13e95119b61`
-                        // `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=imperial&exclude=hourly,daily&appid=723b345acdd52204dfb9a13e95119b61`
+                        // `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
                     );
                     console.log(response);
                     const data = await response.json();
@@ -66,18 +66,18 @@ const Weather = () => {
         fetchWeatherData();
     }, []);
 
-    // const convertKelvinToFahrenheit = (kelvin) => {
-    //     return ((kelvin - 273.15) * 9) / 5 + 32;
-    //   };
-    const convertKelvinToCelsius = (kelvin) => {
-        return kelvin - 273.15;
-    };
+    const convertKelvinToFahrenheit = (kelvin) => {
+        return ((kelvin - 273.15) * 9) / 5 + 32;
+      };
+    // const convertKelvinToCelsius = (kelvin) => {
+    //     return kelvin - 273.15;
+    // };
 
     return (
         <Box display="inline-block" alignItems="center">
             {weatherData ? (
-                <p>{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C
-                    <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" /></p>
+                <p>{Math.round(convertKelvinToFahrenheit(weatherData.main.temp))}°C
+                    <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" width="35px"/></p>
             ) : (
                 <p>Loading weather...</p>
             )}
@@ -97,7 +97,7 @@ export default function Navbar({ darkMode, handleClick }) {
                 flexWrap={'wrap'}
                 justifyContent={'center'}
                 alignItems={'center'}
-                gap={{ xs: '0.8rem', md: '6rem' }}
+                gap={{ xs: '0.8rem', md: '5rem' }}
                 // textTransform={'lowercase'}
                 fontSize={'1rem'}>
                 {links.map((link, index) => (

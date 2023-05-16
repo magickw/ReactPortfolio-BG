@@ -30,7 +30,7 @@ export default function Portfolio() {
                 </Zoom>
             </Box>
             <Fade delay={1000}>
-                <Grid container sx={{ gap: 6 }} justifyContent="center">
+                <Grid container sx={{ gap: 4 }} justifyContent="center">
                     {info.portfolio.slice(0, showAll ? info.portfolio.length : 4).map((project, index) => (
                         <Grid item xs={8} md={6} lg={4} key={index}>
                             <ProjectCard image={project.image} description={project.description} techStacks={project.techStacks} live={project.live} source={project.source} title={project.title} />

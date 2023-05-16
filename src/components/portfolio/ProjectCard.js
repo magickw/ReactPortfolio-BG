@@ -17,10 +17,10 @@ export default function ProjectCard(props) {
          onMouseLeave={() => setIsHover(false)}
          style={{
             transform: isHover ? 'scale(1.1)' : 'scale(1)',
-            backgroundColor: 'lightblue', // Change background color to light blue
+            backgroundColor: 'lightblue', 
             width: '100%',
-            maxWidth: '500px', // Set width to 500px
-            height: '590px', // Set height to 600px
+            maxWidth: '500px', 
+            height: '590px', 
             padding: '1rem',
             borderRadius: '8px',
          }}
