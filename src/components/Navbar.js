@@ -68,14 +68,14 @@ const Weather = () => {
     const convertKelvinToFahrenheit = (kelvin) => {
         return ((kelvin - 273.15) * 9) / 5 + 32;
       };
-    // const convertKelvinToCelsius = (kelvin) => {
-    //     return kelvin - 273.15;
-    // };
+    const convertKelvinToCelsius = (kelvin) => {
+        return kelvin - 273.15;
+    };
 
     return (
         <Box display="inline-block" alignItems="center">
             {weatherData ? (
-                <p>{Math.round(convertKelvinToFahrenheit(weatherData.main.temp))}°F
+                <p>{Math.round(convertKelvinToFahrenheit(weatherData.main.temp))}°F/{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C
                     <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" width="35px"/></p>
             ) : (
                 <p>Loading weather...</p>
