@@ -10,7 +10,7 @@ export default function SocialIcons(props) {
             rel="noopener noreferrer"
             aria-label={label}
             sx={{
-                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.4)', // Add the boxShadow style
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.4)', // Add the boxShadow style
                 backgroundColor: 'lightblue', // Set the backgroundColor to light blue
             }} 
         >
