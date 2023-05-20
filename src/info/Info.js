@@ -123,7 +123,7 @@ export const info = {
         {
             title: "Tech Blog",
             live: "https://guotechblog.herokuapp.com/",
-            description: "This application is a tech blog that utilizes the MVC architectural structure, Handlebars.js, and Sequelize. It enables developers to publish blog posts, make comments, and create user accounts.",
+            description: "This application is a tech blog that utilizes the MVC architectural structure, Handlebars.js, and Sequelize.",
             techStacks: ["Node.js", "Express.js", "Handlebars", "mySQL", "MVC", "restful API", "Sequelize"],
             source: "https://github.com/magickw/MVCTechBlog",
             image: techblog
