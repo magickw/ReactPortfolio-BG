@@ -22,7 +22,7 @@ export default function Home() {
       <Zoom top>
         <Box
           className={classNames(Style.avatar, Style.shadowed)}
-          alt="image of developer"
+          alt="developer's photo"
           style={{ background: info.gradient }}
           component="img"
           src={me}
