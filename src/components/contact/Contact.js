@@ -115,6 +115,7 @@ export default function Contact() {
 
   return (
     <Box>
+      
       <Box
         display={"flex"}
         flexDirection={"row"}
@@ -148,6 +149,7 @@ export default function Contact() {
           },
         }}
       >
+        
         <h1 justifyContent="center" style={{ fontSize: "2rem" }}>
           Get in Touch
         </h1>
@@ -250,8 +252,8 @@ export default function Contact() {
             </FormControl>
           </Grid>
         </form>
+        
       </Grid>
-
     </Box>
   );
 }

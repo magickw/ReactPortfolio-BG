@@ -12,6 +12,7 @@ import Contact from './contact/Contact';
 import Style from './BaseLayout.module.scss';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 
+
 function Footer() {
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -60,6 +61,8 @@ export default function BaseLayout() {
     // Simulate loading
     setTimeout(() => setLoading(false), 1200);
   }, []);
+
+
 
   return (
     <Box className={darkMode ? Style.dark : Style.light}>

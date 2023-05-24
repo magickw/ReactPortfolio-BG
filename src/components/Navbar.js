@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import Style from './Navbar.module.scss';
 import Toggler from "./home/Toggler";

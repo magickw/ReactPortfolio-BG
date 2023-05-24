@@ -8,8 +8,11 @@ import EmojiBullet from './EmojiBullet';
 import SocialIcons from './SocialIcons';
 import Type from './Type';
 import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 
 export default function Home() {
+
+
   return (
     <Box
       component="main"
@@ -17,9 +20,9 @@ export default function Home() {
       flexDirection={{ xs: 'column', md: 'row' }}
       alignItems="center"
       justifyContent="center"
-      // minHeight="calc(100vh - 175px)"
+    // minHeight="calc(100vh - 175px)"
     >
-      <Zoom top>
+      <Zoom left>
         <Box
           className={classNames(Style.avatar, Style.shadowed)}
           alt="developer's photo"
@@ -34,34 +37,39 @@ export default function Home() {
           mr={{ xs: 0, md: '2rem' }}
         />
       </Zoom>
-      <Box>
-        <h1>
-          Hi, I'm{' '}
-          <span
-            style={{
-              background: info.gradient,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            {info.firstName} {info.lastName}{' '}
-          </span>
-          <span className={Style.hand}>🤚</span>
-        </h1>
-        <h2 style={{ padding: 45, textAlign: 'left' }}>
-          <Type />
-        </h2>
-        <Box component="ul" p="0.8rem">
-          {info.miniBio.map((bio, index) => (
-            <EmojiBullet key={index} emoji={bio.emoji} text={bio.text} />
-          ))}
+      <Fade delay={1000}>
+        <Box>
+          <h1>
+            Hi, I'm{' '}
+            <span
+              style={{
+                background: info.gradient,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              {info.firstName} {info.lastName}{' '}
+            </span>
+            <span className={Style.hand}>🤚</span>
+          </h1>
+
+          <h2 style={{ padding: 45, textAlign: 'left' }}>
+            <Type />
+          </h2>
+
+          <Box component="ul" p="0.8rem">
+            {info.miniBio.map((bio, index) => (
+              <EmojiBullet key={index} emoji={bio.emoji} text={bio.text} />
+            ))}
+          </Box>
+
+          <Box display="flex" gap="1.5rem" justifyContent="left" fontSize={{ xs: '2rem', md: '2.5rem' }}>
+            {info.socials.map((social, index) => (
+              <SocialIcons key={index} link={social.link} icon={social.icon} label={social.label} />
+            ))}
+          </Box>
         </Box>
-        <Box display="flex" gap="1.5rem" justifyContent="left" fontSize={{ xs: '2rem', md: '2.5rem' }}>
-          {info.socials.map((social, index) => (
-            <SocialIcons key={index} link={social.link} icon={social.icon} label={social.label} />
-          ))}
-        </Box>
-      </Box>
+      </Fade>
     </Box>
   );
 }
