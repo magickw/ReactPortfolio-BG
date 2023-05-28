@@ -53,7 +53,7 @@ export default function Home() {
             <span className={Style.hand}>🤚</span>
           </h1>
 
-          <h2 style={{ padding: 45, textAlign: 'left' }}>
+          <h2 style={{ padding: "1.5rem", textAlign: 'left' }}>
             <Type />
           </h2>
 
