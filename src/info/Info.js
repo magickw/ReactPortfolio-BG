@@ -18,7 +18,7 @@ export const info = {
     baseColor: colors[0],
     miniBio: [ 
         {
-            emoji: '🌎',
+            emoji: '📍',
             text: 'based in San Francisco Bay Area'
         },
         {
