@@ -34,6 +34,11 @@ export const info = {
     ],
     socials: [
         {
+            link: "tel:+19174324438",
+            icon: 'fa fa-phone',
+            label: 'phone'
+        },
+        {
             link: "https://www.facebook.com/peter.guo",
             icon: 'fa fa-facebook',
             label: 'facebook'
