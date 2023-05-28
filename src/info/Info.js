@@ -24,25 +24,24 @@ export const info = {
         {
             emoji: "💼",
             text: "looking for a full-stack development position"
-        },
-        {
-            emoji: "📧",
-            text: (
-                <a href="mailto:peterguo1983@gmail.com">let's get in touch!</a>
-              )
         }
     ],
     socials: [
+        {
+            link: "mailto:peterguo1983@gmail.com8",
+            icon: 'fa fa-envelope',
+            label: 'email'
+        },
         {
             link: "tel:+19174324438",
             icon: 'fa fa-phone',
             label: 'phone'
         },
-        {
-            link: "https://www.facebook.com/peter.guo",
-            icon: 'fa fa-facebook',
-            label: 'facebook'
-        },
+        // {
+        //     link: "https://www.facebook.com/peter.guo",
+        //     icon: 'fa fa-facebook',
+        //     label: 'facebook'
+        // },
         {
             link: "https://instagram.com/petguo",
             icon: 'fa fa-instagram',

@@ -57,7 +57,7 @@ export default function Home() {
             <Type />
           </h2>
 
-          <Box component="ul" p="0.8rem">
+          <Box component="ul" p="0.8rem" mb="2rem">
             {info.miniBio.map((bio, index) => (
               <EmojiBullet key={index} emoji={bio.emoji} text={bio.text} />
             ))}
