@@ -2,9 +2,9 @@
 
 
 .showButton {
-    border-color: green;
-    color: white;
-    background-color: purple;
+    border-color: $green;
+    color: $white;
+    background-color:$purple;
     padding: 8px 16px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -13,8 +13,8 @@
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: purple;
-      color: white;
+      background-color: $white;
+      color: $purple;
       text-decoration: none;
     }
   }
