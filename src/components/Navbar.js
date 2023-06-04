@@ -56,7 +56,7 @@ const Weather = () => {
                     );
                     console.log(response);
                     const data = await response.json();
-                    setWeatherData(data);
+                    setWeatherData(data);    
                 });
             } catch (error) {
                 console.error('Error fetching weather data:', error);

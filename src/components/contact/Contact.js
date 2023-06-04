@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 // import Select from 'react-select';
+import Guestbook from "./Guestbook";
 
 import {
   Box,
@@ -115,7 +116,6 @@ export default function Contact() {
 
   return (
     <Box>
-      
       <Box
         display={"flex"}
         flexDirection={"row"}
@@ -137,11 +137,12 @@ export default function Contact() {
         </Zoom>
       </Box>
       <Grid container
-        flexDirection="column"
+        flexDirection="row"
+        spacing={5}
+    
         justifyContent="center"
-        md={6}
         sx={{
-          padding: "40px",
+          padding: "60px",
           "@media (min-width: 960px)": {
             paddingLeft: "100px",
             paddingTop: "20px",
@@ -149,6 +150,13 @@ export default function Contact() {
           },
         }}
       >
+         <Grid item xs={12} sm={6}>
+         <Box
+            p={3}
+            border="1px solid #ccc"
+            borderRadius="5px"
+            boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
+          >
         
         <h1 justifyContent="center" style={{ fontSize: "2rem" }}>
           Get in Touch
@@ -160,7 +168,7 @@ export default function Contact() {
           Ask me something about translation and full-stack development.
         </h1>
         <form ref={formRef} onSubmit={handleSubmit}>
-          <Grid item >
+         
             <FormControl>
               <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Name
@@ -250,8 +258,19 @@ export default function Contact() {
               <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
               <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
             </FormControl>
-          </Grid>
         </form>
+        </Box>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Box
+            p={3}
+            border="1px solid #ccc"
+            borderRadius="5px"
+            boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
+          >
+            <Guestbook />
+          </Box>
+        </Grid>
         
       </Grid>
     </Box>
