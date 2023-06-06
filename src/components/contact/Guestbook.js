@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 const Guestbook = () => {
     const [comments, setComments] = useState([]);
+    // eslint-disable-next-line
     const [user, setUser] = useState(null);
 
     // Fetch comments from the server
@@ -48,15 +51,16 @@ const Guestbook = () => {
             <h1 justifyContent="center" style={{ fontSize: "2rem" }}>Guestbook</h1>
             {user ? (
                 <div>
-                    
                     <h2>Welcome, {user.name}!</h2>
                     <button onClick={handleLogin}>Logout</button>
                     <CommentForm onSubmit={handleSubmitComment} />
                 </div>
             ) : (
-                <button onClick={handleLogin}>Login with GitHub</button>
+                <button onClick={handleLogin}>
+                    <FontAwesomeIcon icon={faGithub} /> Login with GitHub
+                </button>
             )}
-
+    
             <h3>Comments:</h3>
             <ul>
                 {comments.map((comment) => (
@@ -67,6 +71,7 @@ const Guestbook = () => {
             </ul>
         </div>
     );
+    
 };
 
 const CommentForm = ({ onSubmit }) => {
