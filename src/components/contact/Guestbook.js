@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 const Guestbook = () => {
@@ -57,7 +56,7 @@ const Guestbook = () => {
                 </div>
             ) : (
                 <button onClick={handleLogin}>
-                    <FontAwesomeIcon icon={faGithub} /> Login with GitHub
+                    <GitHubIcon /> Login with GitHub
                 </button>
             )}
     
