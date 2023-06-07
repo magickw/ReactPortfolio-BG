@@ -10,8 +10,57 @@ import Type from './Type';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 
-export default function Home() {
+const miniBio=[ 
+  {
+      emoji: '📍',
+      text: 'based in San Francisco Bay Area'
+  },
+  {
+      emoji: "💼",
+      text: "looking for a full-stack development position"
+  }
+]
 
+const socials= [
+  {
+      link: "mailto:peterguo1983@gmail.com8",
+      icon: 'fa fa-envelope',
+      label: 'email'
+  },
+  {
+      link: "tel:+19174324438",
+      icon: 'fa fa-phone',
+      label: 'phone'
+  },
+  {
+      link: "https://www.facebook.com/peter.guo",
+      icon: 'fa fa-facebook',
+      label: 'facebook'
+  },
+  {
+      link: "https://instagram.com/petguo",
+      icon: 'fa fa-instagram',
+      label: 'instagram'
+  },
+  {
+      link: "https://github.com/magickw",
+      icon: "fa fa-github",
+      label: 'github'
+  },
+  {
+      link: "https://linkedin.com/in/bfguo",
+      icon: "fa fa-linkedin",
+      label: 'linkedin'
+  },
+  {
+      link: "https://www.youtube.com/@guobaodev",
+      icon: "fa fa-youtube",
+      label: 'youtube'
+  },
+
+]
+
+export default function Home() {
 
   return (
     <Box
@@ -58,13 +107,13 @@ export default function Home() {
           </h2>
 
           <Box component="ul" p="0.8rem" mb="2rem">
-            {info.miniBio.map((bio, index) => (
+            {miniBio.map((bio, index) => (
               <EmojiBullet key={index} emoji={bio.emoji} text={bio.text} />
             ))}
           </Box>
 
           <Box display="flex" gap="1.5rem" justifyContent="left" fontSize={{ xs: '2rem', md: '2.5rem' }}>
-            {info.socials.map((social, index) => (
+            {socials.map((social, index) => (
               <SocialIcons key={index} link={social.link} icon={social.icon} label={social.label} />
             ))}
           </Box>
