@@ -33,7 +33,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: '/api/auth/github/callback',
+      callbackURL: '/auth/github/callback',
     },
     (accessToken, refreshToken, profile, done) => {
       // Handle user authentication logic and store the user information if needed
@@ -65,9 +65,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Define the authentication routes
-app.get('/api/auth/github', passport.authenticate('github'));
+app.get('/auth/github', passport.authenticate('github'));
 app.get(
-  '/api/auth/github/callback',
+  '/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect('/'); // Redirect to the homepage or the guestbook page
@@ -75,7 +75,7 @@ app.get(
 );
 
 // API routes for comments
-app.get('/api/comments', (req, res) => {
+app.get('/comments', (req, res) => {
   Comment.find({}, (err, comments) => {
     if (err) {
       console.error(err);
@@ -86,7 +86,7 @@ app.get('/api/comments', (req, res) => {
   });
 });
 
-app.post('/api/comments', (req, res) => {
+app.post('/comments', (req, res) => {
   const { text, user } = req.body;
   const newComment = new Comment({ text, user: user.username });
   newComment.save((err) => {

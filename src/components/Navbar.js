@@ -54,7 +54,6 @@ const Weather = () => {
                     const response = await fetch(
                         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
                     );
-                    console.log(response);
                     const data = await response.json();
                     setWeatherData(data);    
                 });
