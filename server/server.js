@@ -33,7 +33,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: '/auth/github/callback',
+      callbackURL: 'http://localhost:3000/auth/github/callback',
     },
     (accessToken, refreshToken, profile, done) => {
       // Handle user authentication logic and store the user information if needed
@@ -99,6 +99,9 @@ app.post('/comments', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the guestbook!');
+});
 // Start the server
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
