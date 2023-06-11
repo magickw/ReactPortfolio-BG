@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import Select from 'react-select';
-import Guestbook from "./Guestbook";
 
 import {
   Box,
@@ -145,6 +144,7 @@ export default function Contact() {
           padding: "60px",
           "@media (min-width: 960px)": {
             paddingLeft: "100px",
+            paddingRight: "100px",
             paddingTop: "20px",
             paddingBottom: "20px",
           },
@@ -255,7 +255,7 @@ export default function Contact() {
                   placeholder="Enter your message"
                 />
               </label>
-              <Button variant="contained" type="submit" style={{ fontSize: "1.2rem" }}>{loading ? "Sending..." : "Send"}</Button>
+              <Button variant="contained" type="submit" style={{ fontSize: "1.2rem", marginTop: "20px"  }}>{loading ? "Sending..." : "Send"}</Button>
               <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
             </FormControl>
         </form>
@@ -268,7 +268,6 @@ export default function Contact() {
             borderRadius="5px"
             boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
           >
-            <Guestbook />
           </Box>
         </Grid>
         
