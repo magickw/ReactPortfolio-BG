@@ -79,7 +79,7 @@ const Weather = () => {
                 <p>{Math.round(convertKelvinToFahrenheit(weatherData.main.temp))}°F/{Math.round(convertKelvinToCelsius(weatherData.main.temp))}°C
                     <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="weathericon" width="35px"/></p>
             ) : (
-                <p>Loading weather...</p>
+                <p>Loading...</p>
             )}
         </Box>
     );
@@ -98,7 +98,6 @@ export default function Navbar({ darkMode, handleClick }) {
                 justifyContent={'center'}
                 alignItems={'center'}
                 gap={{ xs: '0.8rem', md: '5rem' }}
-                // textTransform={'lowercase'}
                 fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>

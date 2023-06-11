@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
-// import Select from 'react-select';
+import Select from 'react-select';
 import Guestbook from "./Guestbook";
 
 import {
@@ -23,23 +23,23 @@ export default function Contact() {
     subject: "",
     message: "",
     // file: null,
-    // selectedSourceLang: null,
-    // selectedTargetLang: null,
+    selectedSourceLang: null,
+    selectedTargetLang: null,
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // const sourceLangOptions = [
-  //   { value: 'en', label: 'English' },
-  //   { value: 'zh-CN', label: 'Chinese (Simplified)' },
-  //   { value: 'zh-TW', label: 'Chinese (Traditional)' },
-  // ];
+  const sourceLangOptions = [
+    { value: 'en', label: 'English' },
+    { value: 'zh-CN', label: 'Chinese (Simplified)' },
+    { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  ];
 
-  // const targetLangOptions = [
-  //   { value: 'en', label: 'English' },
-  //   { value: 'zh-CN', label: 'Chinese (Simplified)' },
-  //   { value: 'zh-TW', label: 'Chinese (Traditional)' },
-  // ];
+  const targetLangOptions = [
+    { value: 'en', label: 'English' },
+    { value: 'zh-CN', label: 'Chinese (Simplified)' },
+    { value: 'zh-TW', label: 'Chinese (Traditional)' },
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,13 +50,13 @@ export default function Contact() {
   //   setForm({ ...form, file: e.target.files[0] });
   // };
 
-  // const handleSourceLangChange = (selectedOption) => {
-  //   setForm({ ...form, selectedSourceLang: selectedOption });
-  // };
+  const handleSourceLangChange = (selectedOption) => {
+    setForm({ ...form, selectedSourceLang: selectedOption });
+  };
 
-  // const handleTargetLangChange = (selectedOption) => {
-  //   setForm({ ...form, selectedTargetLang: selectedOption });
-  // };
+  const handleTargetLangChange = (selectedOption) => {
+    setForm({ ...form, selectedTargetLang: selectedOption });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,12 +74,12 @@ export default function Contact() {
     // formData.append("selectedTargetLang", form.selectedTargetLang.value);
 
     // Email validation check
-    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!emailRegex.test(form.email)) {
-    //   setLoading(false);
-    //   setMessage("<div>Please enter a valid email address.</div>");
-    //   return;
-    // }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setLoading(false);
+      setMessage("<div>Please enter a valid email address.</div>");
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -101,8 +101,8 @@ export default function Contact() {
             subject: "",
             message: "",
             // file: null,
-            // selectedSourceLang: null,
-            // selectedTargetLang: null
+            selectedSourceLang: null,
+            selectedTargetLang: null
           });
         },
         (error) => {
@@ -218,7 +218,7 @@ export default function Contact() {
                   onChange={handleFileChange}
                   style={{ display: "block", fontSize: "1.2rem" }}
                 />
-                </label>
+                </label> */}
 
             <label htmlFor="sourceLang" style={{ display: "block", fontSize: "1.2rem" }}>
               Source Language
@@ -240,7 +240,7 @@ export default function Contact() {
                 onChange={handleTargetLangChange}
                 placeholder="Select target language"
               />
-            </label> */}
+            </label>
 
               <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
                 Your Message
