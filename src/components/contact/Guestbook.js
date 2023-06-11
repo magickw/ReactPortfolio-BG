@@ -27,7 +27,8 @@ const Guestbook = () => {
     const handleLogin = async () => {
         try {
             // Redirect the user to the GitHub authentication page
-            window.location.href = '/api/auth/github';
+            window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`;
+
         } catch (error) {
             console.error('Error logging in:', error);
         }

@@ -65,9 +65,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Define the authentication routes
-app.get('/auth/github', passport.authenticate('github'));
+app.get('/api/auth/github', passport.authenticate('github'));
 app.get(
-  '/auth/github/callback',
+  '/api/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect('/'); // Redirect to the homepage or the guestbook page
@@ -75,7 +75,7 @@ app.get(
 );
 
 // API routes for comments
-app.get('/comments', (req, res) => {
+app.get('/api/comments', (req, res) => {
   Comment.find({}, (err, comments) => {
     if (err) {
       console.error(err);
@@ -86,7 +86,7 @@ app.get('/comments', (req, res) => {
   });
 });
 
-app.post('/comments', (req, res) => {
+app.post('/api/comments', (req, res) => {
   const { text, user } = req.body;
   const newComment = new Comment({ text, user: user.username });
   newComment.save((err) => {
@@ -99,9 +99,6 @@ app.post('/comments', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the guestbook!');
-});
 // Start the server
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
