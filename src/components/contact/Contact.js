@@ -69,8 +69,8 @@ export default function Contact() {
     // if (form.file) {
     //   formData.append("file", form.file);
     // }
-    // formData.append("selectedSourceLang", form.selectedSourceLang.value);
-    // formData.append("selectedTargetLang", form.selectedTargetLang.value);
+    formData.append("selectedSourceLang", form.selectedSourceLang.value);
+    formData.append("selectedTargetLang", form.selectedTargetLang.value);
 
     // Email validation check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -108,7 +108,7 @@ export default function Portfolio() {
             </Fade>
             <Fade delay={1000}>
             <Box display="flex" justifyContent="center" mt={2}>
-                <Button className={Style.showButton} variant="outlined" onClick={toggleShowAll}>
+                <Button className={Style.showButton} variant="outlined" onClick={toggleShowAll} sx={{ borderColor: 'green' }}>
                     {showAll ? 'Show Less' : 'Show More'}
                 </Button>
             </Box>

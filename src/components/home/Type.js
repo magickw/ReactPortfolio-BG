@@ -1,6 +1,4 @@
 import React from "react";
-// import React, { useRef, useEffect } from 'react';
-//import typewriter effect
 import Typewriter from "typewriter-effect";
 
 function Type() {
