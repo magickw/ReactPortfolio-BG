@@ -33,7 +33,6 @@ function Footer() {
     >
       <VisitorLocation />
       <p>{currentDate} {currentTime}. Welcome to my portfolio website. &copy; {currentYear}</p>
-      <p>Accept Bitcoin: bc1qp3j3p02kpfqqfdf98xgj3h32m3777cgp549lys   ETH: 0xE762574d76b9dc668DC28c1E0B8Ba005c5eefF2A</p>
     </Box>
   );
 }
