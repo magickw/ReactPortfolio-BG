@@ -8,10 +8,17 @@ import {
   FormControl,
   TextField,
   Button,
+  Paper,
+  Typography,
+  Divider,
   // Input,
 } from "@mui/material";
 import { info } from "../../info/Info";
 import Zoom from "react-reveal/Zoom";
+import Guestbook from "./Guestbook";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import Fade from 'react-reveal/Fade';
 
 
 export default function Contact() {
@@ -114,7 +121,11 @@ export default function Contact() {
   };
 
   return (
-    <Box>
+    <Box sx={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%)',
+      py: 8
+    }}>
       <Box
         display={"flex"}
         flexDirection={"row"}
@@ -138,7 +149,6 @@ export default function Contact() {
       <Grid container
         flexDirection="row"
         spacing={5}
-    
         justifyContent="center"
         sx={{
           padding: "60px",
@@ -150,127 +160,129 @@ export default function Contact() {
           },
         }}
       >
-         <Grid item xs={12} sm={6}>
-         <Box
-            p={3}
-            border="1px solid #ccc"
-            borderRadius="5px"
-            boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
-          >
-        
-        <h1 justifyContent="center" style={{ fontSize: "2rem" }}>
-          Get in Touch
-        </h1>
-        <h1
-          justifyContent="center"
-          style={{ fontSize: "1rem", marginBottom: "20px" }}
-        >
-          Ask me something about translation and full-stack development.
-        </h1>
-        <form ref={formRef} onSubmit={handleSubmit}>
-         
-            <FormControl>
-              <label htmlFor="name" style={{ display: "block", fontSize: "1.2rem" }}>
-                Your Name
-                <TextField
-                  type="text"
-                  style={{ display: "block", fontSize: "1.2rem" }}
-                  id="name"
-                  name="name"
-                  variant="outlined"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                />
-              </label>
-              <label htmlFor="email" style={{ display: "block", fontSize: "1.2rem" }}>
-                Your Email
-                <TextField
-                  type="email"
-                  id="email"
-                  variant="outlined"
-                  style={{ display: "block", fontSize: "1.2rem" }}
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                />
-              </label>
-              <label htmlFor="subject" style={{ display: "block", fontSize: "1.2rem" }}>
-                Subject
-                <TextField
-                  type="subject"
-                  id="subject"
-                  variant="outlined"
-                  style={{ display: "block", fontSize: "1.2rem" }}
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  placeholder="Enter subject"
-                />
-              </label>
-              {/* <label htmlFor="file" style={{ display: "block", fontSize: "1.2rem" }}>
-                Choose a file to upload, for translation inquiry only.
-                <Input
-                  id="file"
-                  type="file"
-                  name="file"
-                  onChange={handleFileChange}
-                  style={{ display: "block", fontSize: "1.2rem" }}
-                />
-                </label> */}
-
-            <label htmlFor="sourceLang" style={{ display: "block", fontSize: "1.2rem" }}>
-              Source Language
-              <Select
-                id="sourceLang"
-                options={sourceLangOptions}
-                value={form.selectedSourceLang}
-                onChange={handleSourceLangChange}
-                placeholder="Select source language"
-              />
-            </label>
-
-            <label htmlFor="targetLang" style={{ display: "block", fontSize: "1.2rem" }}>
-              Target Language
-              <Select
-                id="targetLang"
-                options={targetLangOptions}
-                value={form.selectedTargetLang}
-                onChange={handleTargetLangChange}
-                placeholder="Select target language"
-              />
-            </label>
-
-              <label htmlFor="message" style={{ display: "block", fontSize: "1.2rem" }}>
-                Your Message
-                <TextField
-                  id="message"
-                  name="message"
-                  multiline
-                  rows={5}
-                  style={{ display: "block", height: "100px", fontSize: "1.2rem" }}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Enter your message"
-                />
-              </label>
-              <Button variant="contained" type="submit" style={{ fontSize: "1.2rem", marginTop: "20px"  }}>{loading ? "Sending..." : "Send"}</Button>
-              <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
-            </FormControl>
-        </form>
-        </Box>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Box
-            p={3}
-            border="1px solid #ccc"
-            borderRadius="5px"
-            boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
-          >
-          </Box>
-        </Grid>
-        
+         <Grid item xs={12} md={6}>
+           <Fade bottom>
+             <Paper elevation={6} sx={{
+               p: 4,
+               borderRadius: 4,
+               boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
+               transition: 'box-shadow 0.3s',
+               '&:hover': {
+                 boxShadow: '0 16px 48px 0 rgba(31, 38, 135, 0.25)'
+               },
+               background: 'rgba(255,255,255,0.95)'
+             }}>
+               <Box display="flex" alignItems="center" justifyContent="center" gap={1} mb={1}>
+                 <MailOutlineIcon color="primary" />
+                 <Typography variant="h5" fontWeight="bold" gutterBottom>
+                   Get in Touch
+                 </Typography>
+               </Box>
+               <Typography variant="subtitle1" align="center" color="text.secondary" gutterBottom>
+                 Ask me something about translation and full-stack development.
+               </Typography>
+               <Divider sx={{ my: 2, borderColor: 'primary.main' }} />
+               <Box component="form" ref={formRef} onSubmit={handleSubmit} display="flex" flexDirection="column" gap={2}>
+                 <FormControl>
+                    <TextField
+                      label="Your Name"
+                      type="text"
+                      id="name"
+                      name="name"
+                      variant="outlined"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Enter your name"
+                      fullWidth
+                      required
+                    />
+                    <TextField
+                      label="Your Email"
+                      type="email"
+                      id="email"
+                      name="email"
+                      variant="outlined"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email"
+                      fullWidth
+                      required
+                    />
+                    <TextField
+                      label="Subject"
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      variant="outlined"
+                      value={form.subject}
+                      onChange={handleChange}
+                      placeholder="Enter subject"
+                      fullWidth
+                      required
+                    />
+                    <Box mt={1} />
+                    <label htmlFor="sourceLang" style={{ fontSize: "1.1rem", marginBottom: 4 }}>
+                      Source Language
+                      <Select
+                        id="sourceLang"
+                        options={sourceLangOptions}
+                        value={form.selectedSourceLang}
+                        onChange={handleSourceLangChange}
+                        placeholder="Select source language"
+                      />
+                    </label>
+                    <label htmlFor="targetLang" style={{ fontSize: "1.1rem", marginBottom: 4 }}>
+                      Target Language
+                      <Select
+                        id="targetLang"
+                        options={targetLangOptions}
+                        value={form.selectedTargetLang}
+                        onChange={handleTargetLangChange}
+                        placeholder="Select target language"
+                      />
+                    </label>
+                    <TextField
+                      label="Your Message"
+                      id="message"
+                      name="message"
+                      multiline
+                      rows={5}
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Enter your message"
+                      fullWidth
+                      required
+                    />
+                    <Button variant="contained" type="submit" sx={{ fontSize: "1.1rem", mt: 2, background: info.baseColor, '&:hover': { background: info.baseColor } }} fullWidth>{loading ? "Sending..." : "Send"}</Button>
+                    <Box>{message && <div dangerouslySetInnerHTML={{ __html: message }} />}</Box>
+                  </FormControl>
+               </Box>
+             </Paper>
+           </Fade>
+         </Grid>
+         <Grid item xs={12} md={6}>
+           <Fade bottom delay={200}>
+             <Paper elevation={6} sx={{
+               p: 4,
+               borderRadius: 4,
+               boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
+               transition: 'box-shadow 0.3s',
+               '&:hover': {
+                 boxShadow: '0 16px 48px 0 rgba(31, 38, 135, 0.25)'
+               },
+               background: 'rgba(255,255,255,0.95)'
+             }}>
+               <Box display="flex" alignItems="center" justifyContent="center" gap={1} mb={1}>
+                 <ChatBubbleOutlineIcon color="primary" />
+                 <Typography variant="h5" fontWeight="bold" gutterBottom>
+                   Guestbook
+                 </Typography>
+               </Box>
+               <Divider sx={{ my: 2, borderColor: 'primary.main' }} />
+               <Guestbook />
+             </Paper>
+           </Fade>
+         </Grid>
       </Grid>
     </Box>
   );
